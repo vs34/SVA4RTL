@@ -9,8 +9,10 @@ OUTPUT_DIR="$ROOT_DIR/output"
 # Create output dir if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
+cd input
+
 # Loop through all .tcl files in input folder
-for TCL_FILE in "$INPUT_DIR"/*.tcl; do
+for TCL_FILE in *.tcl; do
 
     BASENAME=$(basename "$TCL_FILE" .tcl)
     OUTPUT_FILE="$OUTPUT_DIR/${BASENAME}.txt"
