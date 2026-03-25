@@ -14,10 +14,10 @@ module flush_sva (
   assert property (p_flush_clears_frontend_valids);
 endmodule
 
-bind sep_mailbox flush_sva u_flush_sva (
+bind mbox_ctrl flush_sva u_flush_sva (
   .clk(clk),
   .rst_n(rst_n),
-  .flush_pipe(1'b0),  // The mailbox design does not have a pipeline to flush
-  .valid_if(1'b0),
-  .valid_id(1'b0)
+  .flush_pipe(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_if(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_id(/* TODO: Add the appropriate signal from the RTL */)
 );

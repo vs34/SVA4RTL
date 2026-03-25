@@ -1,4 +1,4 @@
-// Quality Index Info Inline: 0.2
+// Quality Index Info Inline: 4.5
 module stall_prop_sva (
   input logic clk,
   input logic rst_n,
@@ -14,10 +14,10 @@ module stall_prop_sva (
   assert property (p_stall_holds_upstream_stage);
 endmodule
 
-bind sep_mailbox stall_prop_sva u_stall_prop_sva (
+bind mbox_ctrl stall_prop_sva u_stall_prop_sva (
   .clk(clk),
   .rst_n(rst_n),
-  .stall_ex(1'b0),  // There is no stall signal in the mailbox design
-  .valid_id(1'b0),  // The mailbox does not have pipeline stages
-  .valid_ex(1'b0)
+  .stall_ex(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_id(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_ex(/* TODO: Add the appropriate signal from the RTL */)
 );

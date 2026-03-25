@@ -1,68 +1,71 @@
-// Quality Index Info Inline: 4.8
-module mailbox_sva (
+// Quality Index Info Inline: 4.5
+module bubble_insert_sva (
   input logic clk,
   input logic rst_n,
-  input logic i_sep_req,
-  input logic i_sep_write,
-  input logic [11:0] i_sep_addr,
-  input logic [31:0] i_sep_wdata,
-  output logic [31:0] o_sep_rdata,
-  output logic o_sep_ready,
-  input logic i_host_req,
-  input logic i_host_write,
-  input logic [11:0] i_host_addr,
-  input logic [31:0] i_host_wdata,
-  output logic [31:0] o_host_rdata,
-  output logic o_host_ready,
-  output logic o_host_irq,
-  output logic o_sep_irq
+  input logic raw_hazard,
+  input logic stall_id,
+  input logic valid_id,
+  input logic valid_ex
 );
-
-  // Assertion 1: Busy flag should be cleared when done or error is set
-  property p_busy_cleared_on_done_error;
+  // When a RAW hazard occurs, the ID stage must be stalled and a bubble inserted in EX
+  property p_raw_hazard_inserts_bubble;
     @(posedge clk) disable iff (!rst_n)
-      (mbox_sts.done || mbox_sts.error) |-> !mbox_sts.busy;
+      raw_hazard |=> (stall_id && !valid_ex);
   endproperty
-  assert property (p_busy_cleared_on_done_error);
-
-  // Assertion 2: Done and error flags should be mutually exclusive
-  property p_done_error_exclusive;
-    @(posedge clk) disable iff (!rst_n)
-      !(mbox_sts.done && mbox_sts.error);
-  endproperty
-  assert property (p_done_error_exclusive);
-
-  // Assertion 3: SEP interrupt should be asserted when host writes command
-  property p_sep_irq_on_host_cmd;
-    @(posedge clk) disable iff (!rst_n)
-      (mbox_sts.busy && (mbox_cmd != '0)) |-> o_sep_irq;
-  endproperty
-  assert property (p_sep_irq_on_host_cmd);
-
-  // Assertion 4: Host interrupt should be asserted when SEP sets done or error
-  property p_host_irq_on_mbox_status;
-    @(posedge clk) disable iff (!rst_n)
-      (mbox_sts.done || mbox_sts.error) |-> o_host_irq;
-  endproperty
-  assert property (p_host_irq_on_mbox_status);
-
+  assert property (p_raw_hazard_inserts_bubble);
 endmodule
 
-bind sep_mailbox mailbox_sva u_mailbox_sva (
+bind mbox_ctrl bubble_insert_sva u_bubble_insert_sva (
   .clk(clk),
   .rst_n(rst_n),
-  .i_sep_req(i_sep_req),
-  .i_sep_write(i_sep_write),
-  .i_sep_addr(i_sep_addr),
-  .i_sep_wdata(i_sep_wdata),
-  .o_sep_rdata(o_sep_rdata),
-  .o_sep_ready(o_sep_ready),
-  .i_host_req(i_host_req),
-  .i_host_write(i_host_write),
-  .i_host_addr(i_host_addr),
-  .i_host_wdata(i_host_wdata),
-  .o_host_rdata(o_host_rdata),
-  .o_host_ready(o_host_ready),
-  .o_host_irq(o_host_irq),
-  .o_sep_irq(o_sep_irq)
+  .raw_hazard(/* TODO: Add the appropriate signal from the RTL */),
+  .stall_id(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_id(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_ex(/* TODO: Add the appropriate signal from the RTL */)
+);
+
+module forward_enable_sva (
+  input logic clk,
+  input logic rst_n,
+  input logic raw_hazard,
+  input logic forward_sel
+);
+  // When a RAW hazard is detected, the forwarding mux must be enabled
+  property p_raw_hazard_enables_forwarding;
+    @(posedge clk) disable iff (!rst_n)
+      raw_hazard |-> forward_sel;
+  endproperty
+  assert property (p_raw_hazard_enables_forwarding);
+endmodule
+
+bind mbox_ctrl forward_enable_sva u_forward_enable_sva (
+  .clk(clk),
+  .rst_n(rst_n),
+  .raw_hazard(/* TODO: Add the appropriate signal from the RTL */),
+  .forward_sel(/* TODO: Add the appropriate signal from the RTL */)
+);
+
+module stage_latency_sva #(
+  parameter int STAGE_COUNT = 5
+)(
+  input logic clk,
+  input logic rst_n,
+  input logic valid_if,
+  input logic valid_wb
+);
+  // An instruction that enters the pipeline must exit within a bounded number of cycles
+  property p_bounded_stage_latency;
+    @(posedge clk) disable iff (!rst_n)
+      valid_if |-> ##[1:STAGE_COUNT] valid_wb;
+  endproperty
+  assert property (p_bounded_stage_latency);
+endmodule
+
+bind mbox_ctrl stage_latency_sva #(
+  .STAGE_COUNT(/* TODO: Add the appropriate pipeline depth from the spec */)
+) u_stage_latency_sva (
+  .clk(clk),
+  .rst_n(rst_n),
+  .valid_if(/* TODO: Add the appropriate signal from the RTL */),
+  .valid_wb(/* TODO: Add the appropriate signal from the RTL */)
 );
