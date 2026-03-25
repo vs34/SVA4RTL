@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Wed Mar 25 23:48:20 IST 2026
+# started Wed Mar 25 23:38:23 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 65308
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:45194' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.initCmds.tcl' 'run_reset_behavior_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.postCmds.tcl'
+# pid       : 13567
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:40079' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/input/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/input/jgproject/.tmp/.initCmds.tcl' 'run_reset_behavior_0.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -43,10 +43,10 @@ Rights at 48 CFR 52.227-19, as applicable.
 
 For technical assistance visit http://support.cadence.com.
 
-JasperGold Apps Analysis Session - /home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0
+JasperGold Apps Analysis Session - /home/vaibhav22555/Desktop/SVA4RTL/input/jgproject/sessionLogs/session_0
 
-/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/jg.log
-INFO: successfully checked out license "jasper_fao".
+/home/vaibhav22555/Desktop/SVA4RTL/input/jgproject/jg.log
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
 INFO: reading configuration file "/home/vaibhav22555/.config/jasper/jaspergold.conf".
 % analyze -sv09 mbox_ctrl.sv
 [-- (VERI-1482)] Analyzing Verilog file '/cadence/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
@@ -93,7 +93,7 @@ Summary of errors detected:
 	[ERROR (VERI-1128)] mbox_ctrl.sv(170): 'ST_ERROR' is not declared
 ERROR (ENL034): 19 errors detected in the design file(s).
 
-ERROR: problem encountered at line 1 in file run_reset_behavior_1.tcl
+ERROR: problem encountered at line 1 in file run_reset_behavior_0.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
