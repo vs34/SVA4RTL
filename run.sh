@@ -22,7 +22,7 @@ while true; do
         git pull origin $BRANCH
 
         # Loop through all .sh files in scripts folder
-        for SCRIPT in scripts/*.sh; do
+        for SCRIPT in script/*.sh; do
 	    echo "wht is happening"
             if [ -f "$SCRIPT" ]; then
                 echo "Running: $SCRIPT"
