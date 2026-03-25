@@ -12,6 +12,7 @@ while true; do
     # Check upstream commit
     CURRENT_COMMIT=$(git ls-remote origin $BRANCH | cut -f1)
 
+    TIMESTAMP=$(date '+%Y-%m-%d_%H:%M:%S')
     echo "Checkd upstreem at $TIMESTAMP"
 
     if [ "$CURRENT_COMMIT" != "$LAST_COMMIT" ]; then
@@ -22,6 +23,7 @@ while true; do
 
         # Loop through all .sh files in scripts folder
         for SCRIPT in scripts/*.sh; do
+	    echo "wht is happening"
             if [ -f "$SCRIPT" ]; then
                 echo "Running: $SCRIPT"
 		chmod +x "$SCRIPT"
