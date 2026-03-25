@@ -1,3 +1,3 @@
 #!/bin/bash
 
-touch ../pass.txt
+touch pass.txt
