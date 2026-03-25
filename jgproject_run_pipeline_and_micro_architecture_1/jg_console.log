@@ -1,0 +1,46 @@
+2026-03-25 23:04:53.944457 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.944505 (57426) main____ INFO    JasperGold version info
+2026-03-25 23:04:53.944513 (57426) main____ INFO      tool      : JasperGold 2019.09
+2026-03-25 23:04:53.944519 (57426) main____ INFO      version   : 2019.09p002 64 bits
+2026-03-25 23:04:53.944524 (57426) main____ INFO      build date: 2019.11.26 18:17:27 PST
+2026-03-25 23:04:53.944528 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.944531 (57426) main____ INFO    Runtime info:
+2026-03-25 23:04:53.944536 (57426) main____ INFO      platform  : Linux 2.6.32-754.35.1.el6.x86_64 x86_64
+2026-03-25 23:04:53.944542 (57426) main____ INFO      hostname  : edatools-server2.iiitd.edu.in
+2026-03-25 23:04:53.944545 (57426) main____ INFO      pid       : 57426
+2026-03-25 23:04:53.944550 (57426) main____ INFO      arguments : '-style' 'windows' '-fpv' '-batch' '-tcl' '/home/vaibhav22555/Desktop/SVA4RTL/input/run_pipeline_and_micro_architecture_1.tcl' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_pipeline_and_micro_architecture_1'
+2026-03-25 23:04:53.944554 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.944558 (57426) main____ INFO    System resource limits info:
+2026-03-25 23:04:53.944562 (57426) main____ INFO      virtual memory: unlimited
+2026-03-25 23:04:53.944566 (57426) main____ INFO      cpu time      : unlimited
+2026-03-25 23:04:53.944575 (57426) main____ INFO      stack size    : 10485760 B
+2026-03-25 23:04:53.944581 (57426) main____ INFO      core file size: 0 B
+2026-03-25 23:04:53.944588 (57426) main____ INFO      open files    : 1024
+2026-03-25 23:04:53.944592 (57426) main____ INFO      file size     : unlimited
+2026-03-25 23:04:53.944596 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.944599 (57426) main____ INFO    Memory statistics:
+2026-03-25 23:04:53.944603 (57426) main____ INFO      total physical memory  : 528955884 kB
+2026-03-25 23:04:53.944607 (57426) main____ INFO      free physical memory   : 14398132 kB
+2026-03-25 23:04:53.944610 (57426) main____ INFO      committed address space: 694114284 kB
+2026-03-25 23:04:53.944614 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.944634 (57426) main____ INFO    Important environment variables:
+2026-03-25 23:04:53.944642 (57426) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
+2026-03-25 23:04:53.944648 (57426) main____ INFO      DISPLAY        : ':2100.0'
+2026-03-25 23:04:53.944653 (57426) main____ INFO      EDITOR         : 'gedit'
+2026-03-25 23:04:53.944658 (57426) main____ INFO      LM_LICENSE_FILE: '5280@14.139.1.126'
+2026-03-25 23:04:53.944661 (57426) main____ INFO    ----------------------------------------
+2026-03-25 23:04:53.946716 (57426) lic_core INFO    Initializing license system ...
+2026-03-25 23:04:53.947967 (57426) lic_core INFO    ... license system initialized.
+2026-03-25 23:04:53.948995 (57426) lic__man INFO    Claim 'fpv' for <ui>.
+2026-03-25 23:04:53.949025 (57426) lic_core INFO    (1) checking out 'jasper_fpv' ...
+2026-03-25 23:04:54.261605 (57426) lic_core INFO    ... (1) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-03-25 23:04:54.261693 (57426) lic_core INFO    (2) checking out 'jasper_fao' ...
+2026-03-25 23:04:54.882653 (57426) lic_core INFO    ... (2) checkout succeeded
+2026-03-25 23:04:54.902699 (57426) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-03-25 23:04:54.903556 (57426) session_ INFO    Analysis session with session id 'session_0' started (pid: 57492)
+2026-03-25 23:05:03.839255 (57426) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:60996)
+2026-03-25 23:05:04.122843 (57426) main____ INFO    About to exit: request to exit with status 1 received from analysis session 'session_0'
+2026-03-25 23:05:04.537704 (57426) session_ INFO    Analysis session 'session_0' disconnected.
+2026-03-25 23:05:04.538039 (57426) lic__man INFO    Unclaim everything for 'session_0'.
+2026-03-25 23:05:04.540699 (57426) session_ INFO    Process for analysis session 'session_0' has exited with exit status '1'.
+2026-03-25 23:05:06.170969 (57426) main____ INFO    Exiting with status 1.
