@@ -4,7 +4,7 @@ WORK_DIR="script"
 BRANCH="main"
 LAST_COMMIT=""
 
-cd "$WORK_DIR"
+#cd "$WORK_DIR"
 echo "in the DIR"
 pwd
 
