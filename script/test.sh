@@ -1,3 +1,5 @@
 #!/bin/bash
 
-touch pass.txt
+mkdir output
+touch output/working.txt
+echo "cool cool cool" > output/working.txt
