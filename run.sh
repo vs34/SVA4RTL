@@ -5,6 +5,8 @@ BRANCH="main"
 LAST_COMMIT=""
 
 cd "$WORK_DIR"
+echo "in the DIR"
+pwd
 
 while true; do
     # Check upstream commit
@@ -20,6 +22,7 @@ while true; do
         for SCRIPT in scripts/*.sh; do
             if [ -f "$SCRIPT" ]; then
                 echo "Running: $SCRIPT"
+		chmod +x "$SCRIPT"
                 bash "$SCRIPT"
                 echo "Done: $SCRIPT"
             fi
