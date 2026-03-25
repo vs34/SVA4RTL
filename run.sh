@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORK_DIR="/path/to/workdir"
+WORK_DIR="script"
 BRANCH="main"
 LAST_COMMIT=""
 
@@ -29,7 +29,7 @@ while true; do
         git add .
 
         # Commit with timestamp
-        TIMESTAMP=$(date '+%Y-%m-%d_%H-%M-%S')
+        TIMESTAMP=$(date '+%Y-%m-%d_%H:%M:%S')
         git commit -m "Server_$TIMESTAMP"
 
         # Push
