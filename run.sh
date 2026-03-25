@@ -12,6 +12,8 @@ while true; do
     # Check upstream commit
     CURRENT_COMMIT=$(git ls-remote origin $BRANCH | cut -f1)
 
+    echo "Checkd upstreem at $TIMESTAMP"
+
     if [ "$CURRENT_COMMIT" != "$LAST_COMMIT" ]; then
         echo "New commit detected: $CURRENT_COMMIT"
 
@@ -42,5 +44,5 @@ while true; do
         echo "Cycle done at $TIMESTAMP"
     fi
 
-    sleep 30
+    sleep 10
 done
