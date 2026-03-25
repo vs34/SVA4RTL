@@ -1,0 +1,213 @@
+Usage:
+  jg <file_name>.tcl
+  jg -version
+  jg -help
+  jg ( -superlint | -arch |-bps |-cdc | -conn |-cov |-csr |-fpv |-fsv |-lpv
+      |-rtld |-sec |-spec |-spv | -unr | -xprop )
+     [ -no_jges]
+     [ -batch |-no_gui]
+     [ -proj <dir_name> ]
+     [ -acquire_proj ]
+     ( -tcl <tcl_script> )*
+     ( -command <tcl_command> )*
+     [ -db database |-template (Empty | English | Japanese | <file_name.xml>) ]
+     ( -define <tcl_variable> <tcl_value> )*
+     [ -remote_mode mode [ -remote_console ] ]
+     [ -no_wait ] [ -wait_interval <n> ] [ -wait_retries <n> ]
+     [ -nice ]
+     [ -license_remove_method <method> ]
+     [ -title <title> ]
+     [ -bg <color> ]
+     [ -fg <color> ]
+     [ -display <display> ]
+     [ -allow_unsupported_OS]
+     [ -cov_init]
+  jg -pk <proof_kit.jdb>
+  jg -debug_handoff [database_name]
+
+Options:
+  <file_name>.tcl        Run zero or more Tcl scripts with the required .tcl
+                         extension in the order they appear on the command line
+                         as if they were entered interactively.
+                         Example:
+                         // Run script1.tcl and then run script2.tcl.
+                         % jaspergold script1.tcl script2.tcl
+  -version               Display the version string.
+  -help                  Display this information.
+  -superlint             Launch the Superlint App.
+  -arch                  Launch the Architectural Modeling App.
+  -bps                   Launch the Behavioral Property Synthesis App.
+  -cdc                   Launch the Clock Domain Crossing Verification App.
+  -conn                  Launch the Connectivity Verification App.
+  -cov                   Launch the Coverage App.
+     [ -offline ]        Launches the Coverage App in offline mode. With this
+                         mode, you can load the coverage database without
+                         loading the elaborated design.
+  -csr                   Launch the CSR Verification App.
+  -fpv                   Launch the Formal Property Verification App.
+  -fsv                   Launch the Functional Safety Verification App.
+  -lpv                   Launch the Low Power Verification App.
+  -rtld                  Launch the RTL Development GUI.
+  -sec                   Launch the Sequential Equivalence Checking App.
+  -spec                  Launch the Executable Specification GUI.
+  -sps                   Launch the Automatic Formal Linting App.
+  -spv                   Launch the Security Path Verification App.
+  -unr                   Launch the Coverage Unreachability App.
+  -xprop                 Launch the X-Propagation Verification App.
+  -no_jges               Disable JasperGold Expert System on invocation.
+  -batch                 Start the tool in batch mode. Not supported with
+                         "-spec" or "-rtld".
+  -no_gui                Start the tool in no-GUI mode, allowing Tcl command
+                         entry from the terminal. Not supported with "-spec"
+                         or "-rtld".
+  -proj <dir_name>       Create all project files in directory <dir_name>.
+                         If you do not use "-proj" to specify a directory, the
+                         tool uses ./jgproject. The project directory stores
+                         various files, including log files, debugging files,
+                         and settings related to the current project.
+                         NOTE: "-proj" does not support a lone forward slash (\)
+                         or empty string.
+  -acquire_proj          Forcibly acquire ownership of the project directory
+                         if it is already locked.
+  -tcl <tcl>             Execute Tcl script in session_0.
+  -command <cmd>         Execute Tcl command after running all Tcl scripts and
+                         before receiving interactive commands.
+  -db <file_name>        Load the specified database.
+  -template              Load a document template for Executable Specification
+      Empty              GUI.
+    | English            - By default, the tool loads an empty template.
+    | Japanese           - Use "English" or "Japanese" to build a standard
+    | <file_name.xml>      database with the specified language.
+                         - Specify an XML file name to build a database with a
+                           predefined template, for example, your company's
+                           approved template.
+  -define <var> <val>    Define a Tcl variable and its value for session_0.
+  -remote_mode <mode>    Define the configuration for launching remote analysis
+                         sessions. Use:
+                         - "local" for no configuration
+                         - "lsf" for LSF (rely on the environment variable
+                            LSF_BINDIR)
+                         - "oge" for OGE (also known as SGE, rely on the
+                           environment variable SGE_ROOT)
+                         Any other value will be regarded as a custom shell
+                         script for the mode "shell".
+  -remote_console        Use remote session_0 session.
+  -no_wait               Do not wait for a license to become available.
+                         By default, if a license is unavailable, the tool
+                         waits for one to become available. With this switch,
+                         the tool
+                         errors out instead.
+  -wait_interval <n>     In the event a license is not available, wait the
+                         specified number of seconds and then retry license
+                         checkout.
+                         By default, JasperGold Apps tries a license checkout
+                         every 60 seconds.
+  -wait_retries <n>      In the event a license is not available, try to check
+                         out a license the specified number of times.
+                         By default, the number of retries is unlimited.
+  -nice                  Flag checked-out licenses to make them available for
+                         surrender to other sessions.
+                         Refer to the command reference manual for license
+                         manager settings that do not support "-nice".
+  -license_remove_method Specify the method for removing nice licenses checked
+    <method>             out by other JasperGold instances. The switch has no
+                         effect if combined with "-nice". Use:
+                         - "off" for not removing licenses
+                         - "default" for explicitly selecting the default
+                            method (currently the same as "lmremove")
+                         - "lmremove" for removing licenses with "lmremove -h"
+                           (this is currently the default value--used if the
+                           switch is not specified)
+                         - "lmremove_c" for removing licenses with
+                           "lmremove -c ... -h"
+                         - Any other value will be regarded as a custom shell
+                           script. The script will receive the feature name,
+                           the license server, the port number, and the license
+                           handle as arguments. The script must exit with
+                           status "0" when it has removed a license.
+  -title <title>         Prepend all main window titles with the specified
+                         string.
+                         NOTE: If your string includes spaces, you must enclose
+                         it in quotation marks.
+  -bg                    Change the background color of GUIs to the specified
+                         color. "-bg" supports x11 color names and hex codes.
+                         For color choices, use a web browser and the search
+                         string "x11 color".
+  -fg                    Change the foreground color of GUIs to the specified
+                         color. "-fg" supports x11 color names and hex codes.
+                         For color choices, use a web browser and the search
+                         string "x11 color".
+  -display <display>     Configure the display into which the remote session
+                         should launch the window.
+  -allow_unsupported_OS  Suppress the non-supported OS warning and launch the
+                         tool if possible.
+  -cov_init              Specify coverage instrumentation options for
+                         "check_cov" and to export Unicov database.
+                         Include the sub-options in quotes.
+                         For example,
+                         -cov_init "-coverage all -covfile a.ccf -covoverwrite"
+                         NOTE: You can also append all "check_cov -init" options
+                         directly to -cov_init.
+                         For example, -cov_init "-precision high"
+    -coverage              Enable coverage instrumentation.
+        <coverage_option>  Supported options :
+                              - block (b)
+                              - statement (s)
+                              - expression (e)
+                              - functional (u)
+                              - functional_tcl (u_tcl)
+                              - toggle (t)
+                              - all
+                           Either specify the switch multiple times to specify
+                           multiple coverage types or specify types in colon
+                           separated format.
+                              Usage : example, -coverage b:s:e -coverage u
+    -covdut                Select DUT for Coverage
+        <DUT string>       Specify the switch multiple times to specify
+                           multiple DUTs.
+    -covworkdir <dir_name> Select coverage workdir
+    -covscope   <dir_name> Select coverage scope name
+    -covtest    <dir_name> Select coverage test name
+    -covfile    <file>     Specify coverage instrumentation control file
+                           Specify the switch multiple times to read multiple
+                           files.
+    -covoverwrite          Enable overwrite of coverage output files
+    -covcleanworkdir       Remove coverage working directory
+    -write_metrics         Dump the vsof file
+    -interval              Interval of dumping intermittent UNR results
+        <time>             Specify the time interval as an integer followed by
+                           "s", "m", or "h".
+                             example: -interval 4h (for 4 hours)
+    -waveform              Save waveform to Visualize property results.
+    -witness_resolution    Preference among witnesses to get saved to vsof.
+        any_pass           Default : any_pass
+         | any_unr
+         | all
+    -task                  Specify the tasks to be exported to Unicov database.
+                           Default : current set task at time of export
+                           example : -task {scope1::A:B C scope2::D}
+                               scope1, scope2 are verification scope
+                               A, B, C, D are tasks.
+    -exclude               Specify options to exclude cover items from the
+                           Unicov database.
+        const              Specify the switch multiple times to specify
+                           multiple types.
+         | assume          Default : none
+         | reset             example : -exclude const -exclude waived
+         | waived
+    -disable_user_proven_status  Do not export marked/bounded proven validity
+                           status on properties to Unicov database.
+    -use_native_ucis       Use the UCIS library shipped with JasperGold.
+    -launch_imc            View the last generated Unicov database with IMC.
+                           NOTE: The tool ignores this switch if you have
+                           defined multiple tasks with the "-task" switch.
+    -tester_mode           Launch JasperGold in tester mode. In tester mode,
+                           the tool writes a vsof (which can be read in vManager)
+                           upon exiting. It does not generate a Unicov database.
+  -pk <proof_kit.jdb>    Launch the tool with tabs for the Executable
+                         Specification and RTL Development GUIs and load the
+                         specified Intelligent Proof Kit database.
+  -debug_handoff         Launch the tool in the Debug Handoff GUI. It provides
+    [database_name]      a simplified user interface to browse and debug the
+                         properties and Visualize windows captured in the debug
+                         handoff database.
