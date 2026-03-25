@@ -42,6 +42,7 @@ while true; do
         # Push
         git push origin $BRANCH
 
+    	CURRENT_COMMIT=$(git ls-remote origin $BRANCH | cut -f1)
         LAST_COMMIT="$CURRENT_COMMIT"
         echo "Cycle done at $TIMESTAMP"
     fi
