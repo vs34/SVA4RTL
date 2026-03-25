@@ -1,7 +1,7 @@
 // Quality Index Info Inline: 1.0
 module mbox_ctrl_reset_behavior_assert (
-  input logic        clk,
-  input logic        rst_n,
+  input logic clk,
+  input logic rst_n,
   input logic [31:0] r_ctrl,
   input logic [31:0] r_cmd,
   input logic [31:0] r_irq_mask,
@@ -19,34 +19,28 @@ module mbox_ctrl_reset_behavior_assert (
   input logic        o_ready
 );
 
-  // Assert that all soft registers are reset to 0 on rst_n
-  assert property (
-    @(posedge clk) disable iff (!rst_n)
-    r_ctrl == '0 && r_cmd == '0 && r_irq_mask == '0 && r_xfer_cnt == '0 &&
-    r_src_addr == '0 && r_dst_addr == '0 && r_lock == 1'b0 && r_err_code == '0
-  );
-
-  // Assert that FIFO pointers and count reset to 0 on rst_n
-  assert property (
-    @(posedge clk) disable iff (!rst_n)
-    fifo_cnt == 4'd0 && fifo_wr_ptr == 3'd0 && fifo_rd_ptr == 3'd0
-  );
-
-  // Assert that remaining_q and timeout_q reset to 0 on rst_n
-  assert property (
-    @(posedge clk) disable iff (!rst_n)
-    remaining_q == '0 && timeout_q == '0
-  );
-
-  // Assert that o_rdata and o_ready reset to 0 on rst_n
-  assert property (
-    @(posedge clk) disable iff (!rst_n)
-    o_rdata == '0 && o_ready == 1'b0
+  // Reset Behavior Assertions
+  assert property (@(posedge clk) disable iff (!rst_n)
+    r_ctrl == '0 &&
+    r_cmd == '0 &&
+    r_irq_mask == '0 &&
+    r_xfer_cnt == '0 &&
+    r_src_addr == '0 &&
+    r_dst_addr == '0 &&
+    r_lock == '0 &&
+    r_err_code == '0 &&
+    remaining_q == '0 &&
+    timeout_q == '0 &&
+    fifo_cnt == '0 &&
+    fifo_wr_ptr == '0 &&
+    fifo_rd_ptr == '0 &&
+    o_rdata == '0 &&
+    o_ready == '0
   );
 
 endmodule
 
-bind mbox_ctrl mbox_ctrl_reset_behavior_assert u_mbox_ctrl_reset_behavior_assert (
+bind mbox_ctrl u_mbox_ctrl_reset_behavior_assert (
   .clk(clk),
   .rst_n(rst_n),
   .r_ctrl(r_ctrl),
