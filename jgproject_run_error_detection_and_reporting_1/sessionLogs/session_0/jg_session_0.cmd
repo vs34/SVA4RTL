@@ -5,8 +5,8 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Wed Mar 25 23:04:00 IST 2026
+# started Wed Mar 25 23:08:58 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 53148
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37307' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.initCmds.tcl' '/home/vaibhav22555/Desktop/SVA4RTL/input/run_error_detection_and_reporting_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.postCmds.tcl'
+# pid       : 72218
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:33623' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.initCmds.tcl' 'run_error_detection_and_reporting_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.postCmds.tcl'
 analyze -sv09 sep_mailbox.sv

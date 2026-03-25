@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Wed Mar 25 23:04:00 IST 2026
+# started Wed Mar 25 23:08:58 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 53148
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37307' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.initCmds.tcl' '/home/vaibhav22555/Desktop/SVA4RTL/input/run_error_detection_and_reporting_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.postCmds.tcl'
+# pid       : 72218
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:33623' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.initCmds.tcl' 'run_error_detection_and_reporting_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_error_detection_and_reporting_1/.tmp/.postCmds.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -49,9 +49,51 @@ JasperGold Apps Analysis Session - /home/vaibhav22555/Desktop/SVA4RTL/jgproject_
 INFO: successfully checked out license "jasper_fao".
 INFO: reading configuration file "/home/vaibhav22555/.config/jasper/jaspergold.conf".
 % analyze -sv09 sep_mailbox.sv
-ERROR (ESW046): The file "sep_mailbox.sv" does not exist.
+[-- (VERI-1482)] Analyzing Verilog file '/cadence/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'sep_mailbox.sv'
+[ERROR (VERI-1128)] sep_mailbox.sv(18): 'sep_pkg' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(27): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(27): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(28): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(28): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(35): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(35): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(36): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(36): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(49): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(49): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(52): 'DATA_WIDTH' is not declared
+[ERROR (VERI-1952)] sep_mailbox.sv(52): range must be bounded by constant expressions
+[ERROR (VERI-1128)] sep_mailbox.sv(86): 'MBOX_CMD_OFFSET' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(90): 'MBOX_DATA0_OFFSET' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(91): 'MBOX_DATA1_OFFSET' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(92): 'MBOX_DATA2_OFFSET' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(93): 'MBOX_DATA3_OFFSET' is not declared
+[ERROR (VERI-1128)] sep_mailbox.sv(94): 'MBOX_DATA4_OFFSET' is not declared
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1128)] sep_mailbox.sv(18): 'sep_pkg' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(27): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(27): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(28): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(28): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(35): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(35): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(36): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(36): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(49): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(49): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(52): 'DATA_WIDTH' is not declared
+	[ERROR (VERI-1952)] sep_mailbox.sv(52): range must be bounded by constant expressions
+	[ERROR (VERI-1128)] sep_mailbox.sv(86): 'MBOX_CMD_OFFSET' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(90): 'MBOX_DATA0_OFFSET' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(91): 'MBOX_DATA1_OFFSET' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(92): 'MBOX_DATA2_OFFSET' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(93): 'MBOX_DATA3_OFFSET' is not declared
+	[ERROR (VERI-1128)] sep_mailbox.sv(94): 'MBOX_DATA4_OFFSET' is not declared
+ERROR (ENL034): 19 errors detected in the design file(s).
 
-ERROR: problem encountered at line 1 in file /home/vaibhav22555/Desktop/SVA4RTL/input/run_error_detection_and_reporting_1.tcl
+ERROR: problem encountered at line 1 in file run_error_detection_and_reporting_1.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
