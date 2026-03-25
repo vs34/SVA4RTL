@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Wed Mar 25 23:09:59 IST 2026
+# started Wed Mar 25 23:31:26 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 3327
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:43376' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/.tmp/.initCmds.tcl' 'run_reset_behavior_0.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/.tmp/.postCmds.tcl'
+# pid       : 56226
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35508' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/.tmp/.initCmds.tcl' 'run_reset_behavior_0.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/.tmp/.postCmds.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -48,49 +48,49 @@ JasperGold Apps Analysis Session - /home/vaibhav22555/Desktop/SVA4RTL/jgproject_
 /home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_0/jg.log
 INFO: successfully checked out license "jasper_fao".
 INFO: reading configuration file "/home/vaibhav22555/.config/jasper/jaspergold.conf".
-% analyze -sv09 sep_pkg.sv
+% analyze -sv09 mbox_ctrl.sv
 [-- (VERI-1482)] Analyzing Verilog file '/cadence/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
-[-- (VERI-1482)] Analyzing Verilog file 'sep_pkg.sv'
-[ERROR (VERI-1128)] sep_pkg.sv(18): 'sep_pkg' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(27): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(27): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(28): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(28): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(35): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(35): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(36): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(36): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(49): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(49): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(52): 'DATA_WIDTH' is not declared
-[ERROR (VERI-1952)] sep_pkg.sv(52): range must be bounded by constant expressions
-[ERROR (VERI-1128)] sep_pkg.sv(86): 'MBOX_CMD_OFFSET' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(90): 'MBOX_DATA0_OFFSET' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(91): 'MBOX_DATA1_OFFSET' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(92): 'MBOX_DATA2_OFFSET' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(93): 'MBOX_DATA3_OFFSET' is not declared
-[ERROR (VERI-1128)] sep_pkg.sv(94): 'MBOX_DATA4_OFFSET' is not declared
+[-- (VERI-1482)] Analyzing Verilog file 'mbox_ctrl.sv'
+[ERROR (VERI-1128)] mbox_ctrl.sv(20): 'mbox_pkg' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(78): 'FIFO_DEP' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(79): 'FIFO_DEP' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_ARMED' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_XFER' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(98): 'ST_DONE' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(99): 'ST_ERROR' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(108): 'REG_FIFO_IN' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(111): 'REG_FIFO_OUT' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(149): 'ST_XFER' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(161): 'ST_IDLE' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_EN' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_START' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ERROR' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ARMED' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(165): 'ST_ARMED' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(166): 'ST_XFER' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(168): 'ST_XFER' is not declared
+[ERROR (VERI-1128)] mbox_ctrl.sv(170): 'ST_ERROR' is not declared
 [INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
 Summary of errors detected:
-	[ERROR (VERI-1128)] sep_pkg.sv(18): 'sep_pkg' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(27): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(27): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(28): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(28): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(35): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(35): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(36): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(36): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(49): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(49): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(52): 'DATA_WIDTH' is not declared
-	[ERROR (VERI-1952)] sep_pkg.sv(52): range must be bounded by constant expressions
-	[ERROR (VERI-1128)] sep_pkg.sv(86): 'MBOX_CMD_OFFSET' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(90): 'MBOX_DATA0_OFFSET' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(91): 'MBOX_DATA1_OFFSET' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(92): 'MBOX_DATA2_OFFSET' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(93): 'MBOX_DATA3_OFFSET' is not declared
-	[ERROR (VERI-1128)] sep_pkg.sv(94): 'MBOX_DATA4_OFFSET' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(20): 'mbox_pkg' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(78): 'FIFO_DEP' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(79): 'FIFO_DEP' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_ARMED' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_XFER' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(98): 'ST_DONE' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(99): 'ST_ERROR' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(108): 'REG_FIFO_IN' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(111): 'REG_FIFO_OUT' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(149): 'ST_XFER' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(161): 'ST_IDLE' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_EN' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_START' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ERROR' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ARMED' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(165): 'ST_ARMED' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(166): 'ST_XFER' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(168): 'ST_XFER' is not declared
+	[ERROR (VERI-1128)] mbox_ctrl.sv(170): 'ST_ERROR' is not declared
 ERROR (ENL034): 19 errors detected in the design file(s).
 
 ERROR: problem encountered at line 1 in file run_reset_behavior_0.tcl
