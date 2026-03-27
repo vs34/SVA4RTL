@@ -38,52 +38,19 @@ JasperGold Apps Analysis Session - /home/vaibhav22555/Desktop/SVA4RTL/jgproject_
 /home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/jg.log
 INFO: successfully checked out license "jasper_fao".
 INFO: reading configuration file "/home/vaibhav22555/.config/jasper/jaspergold.conf".
-% analyze -sv09 mbox_ctrl.sv
+% analyze -sv09 mbox_pkg.sv
 [-- (VERI-1482)] Analyzing Verilog file '/cadence/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'mbox_pkg.sv'
+% analyze -sv09 mbox_ctrl.sv
 [-- (VERI-1482)] Analyzing Verilog file 'mbox_ctrl.sv'
-[ERROR (VERI-1128)] mbox_ctrl.sv(20): 'mbox_pkg' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(78): 'FIFO_DEP' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(79): 'FIFO_DEP' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_ARMED' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_XFER' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(98): 'ST_DONE' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(99): 'ST_ERROR' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(108): 'REG_FIFO_IN' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(111): 'REG_FIFO_OUT' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(149): 'ST_XFER' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(161): 'ST_IDLE' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_EN' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_START' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ERROR' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ARMED' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(165): 'ST_ARMED' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(166): 'ST_XFER' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(168): 'ST_XFER' is not declared
-[ERROR (VERI-1128)] mbox_ctrl.sv(170): 'ST_ERROR' is not declared
-[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+% analyze -sv09 assert_reset_behavior_1.sv
+[-- (VERI-1482)] Analyzing Verilog file 'assert_reset_behavior_1.sv'
+[ERROR (VERI-1137)] assert_reset_behavior_1.sv(43): syntax error near '('
 Summary of errors detected:
-	[ERROR (VERI-1128)] mbox_ctrl.sv(20): 'mbox_pkg' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(78): 'FIFO_DEP' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(79): 'FIFO_DEP' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_ARMED' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(97): 'ST_XFER' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(98): 'ST_DONE' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(99): 'ST_ERROR' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(108): 'REG_FIFO_IN' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(111): 'REG_FIFO_OUT' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(149): 'ST_XFER' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(161): 'ST_IDLE' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_EN' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(162): 'CTRL_START' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ERROR' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(163): 'ST_ARMED' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(165): 'ST_ARMED' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(166): 'ST_XFER' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(168): 'ST_XFER' is not declared
-	[ERROR (VERI-1128)] mbox_ctrl.sv(170): 'ST_ERROR' is not declared
-ERROR (ENL034): 19 errors detected in the design file(s).
+	[ERROR (VERI-1137)] assert_reset_behavior_1.sv(43): syntax error near '('
+ERROR (ENL034): 1 errors detected in the design file(s).
 
-ERROR: problem encountered at line 1 in file run_reset_behavior_1.tcl
+ERROR: problem encountered at line 3 in file run_reset_behavior_1.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...

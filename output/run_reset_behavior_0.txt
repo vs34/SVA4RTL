@@ -41,9 +41,16 @@ INFO: reading configuration file "/home/vaibhav22555/.config/jasper/jaspergold.c
 % analyze -sv09 mbox_pkg.sv
 [-- (VERI-1482)] Analyzing Verilog file '/cadence/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
 [-- (VERI-1482)] Analyzing Verilog file 'mbox_pkg.sv'
-% <<<<<<< HEAD
-invalid command name "<<<<<<<"
-ERROR: problem encountered at line 2 in file run_reset_behavior_0.tcl
+% analyze -sv09 mbox_ctrl.sv
+[-- (VERI-1482)] Analyzing Verilog file 'mbox_ctrl.sv'
+% analyze -sv09 assert_reset_behavior_0.sv
+[-- (VERI-1482)] Analyzing Verilog file 'assert_reset_behavior_0.sv'
+[ERROR (VERI-1137)] assert_reset_behavior_0.sv(43): syntax error near '('
+Summary of errors detected:
+	[ERROR (VERI-1137)] assert_reset_behavior_0.sv(43): syntax error near '('
+ERROR (ENL034): 1 errors detected in the design file(s).
+
+ERROR: problem encountered at line 3 in file run_reset_behavior_0.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
