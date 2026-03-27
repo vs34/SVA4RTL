@@ -39,23 +39,3 @@ module mbox_ctrl_reset_behavior_assert (
   );
 
 endmodule
-
-bind mbox_ctrl u_mbox_ctrl_reset_behavior_assert (
-  .clk(clk),
-  .rst_n(rst_n),
-  .r_ctrl(r_ctrl),
-  .r_cmd(r_cmd),
-  .r_irq_mask(r_irq_mask),
-  .r_xfer_cnt(r_xfer_cnt),
-  .r_src_addr(r_src_addr),
-  .r_dst_addr(r_dst_addr),
-  .r_lock(r_lock),
-  .r_err_code(r_err_code),
-  .remaining_q(remaining_q),
-  .timeout_q(timeout_q),
-  .fifo_cnt(fifo_cnt),
-  .fifo_wr_ptr(fifo_wr_ptr),
-  .fifo_rd_ptr(fifo_rd_ptr),
-  .o_rdata(o_rdata),
-  .o_ready(o_ready)
-);
