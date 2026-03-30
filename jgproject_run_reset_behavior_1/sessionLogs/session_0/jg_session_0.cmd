@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Mon Mar 30 22:19:00 IST 2026
+# started Mon Mar 30 22:29:26 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 36170
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38203' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.initCmds.tcl' 'run_reset_behavior_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.postCmds.tcl'
+# pid       : 48867
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:34858' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.initCmds.tcl' 'run_reset_behavior_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.postCmds.tcl'
 analyze -sv09 mbox_pkg.sv
 analyze -sv09 mbox_ctrl.sv
 analyze -sv09 assert_reset_behavior_1.sv
