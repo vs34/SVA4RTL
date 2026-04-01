@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Wed Apr 01 12:20:25 IST 2026
+# started Thu Apr 02 03:34:59 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 15293
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:46052' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/.tmp/.initCmds.tcl' 'counter_jasper.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/.tmp/.postCmds.tcl'
+# pid       : 55613
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:43702' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/.tmp/.initCmds.tcl' 'counter_jasper.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper/.tmp/.postCmds.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -118,7 +118,7 @@ use check_assumptions -show -live to show this property in the property table
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 5
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 15468@edatools-server2.iiitd.edu.in(local) jg_15293_edatools-server2.iiitd.edu.in_1
+0.0.N: Proofgrid shell started at 55759@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.N: Starting proof for property "counter.HOLD_STABLE"	[0.00 s].
@@ -180,18 +180,18 @@ INFO (IPF047): 0.0.N: The cover property "counter.COV_MAX" was covered in 16 cyc
 0.0.N: All properties determined. [0.01 s]
 0.0.N: Exited with Success (@ 0.01 s)
 0: ProofGrid usable level: 0
-0.0.Hp: Proofgrid shell started at 15469@edatools-server2.iiitd.edu.in(local) jg_15293_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Proofgrid shell started at 55760@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
 0.0.Hp: Requesting engine job to terminate
 0.0.Hp: Interrupted. [0.00 s]
-0.0.B: Proofgrid shell started at 15487@edatools-server2.iiitd.edu.in(local) jg_15293_edatools-server2.iiitd.edu.in_1
-0.0.B: Requesting engine job to terminate
-0.0.Hp: Exited with Success (@ 0.05 s)
-0.0.B: Interrupted. [0.00 s]
-0.0.B: Exited with Success (@ 0.05 s)
-0.0.Ht: Proofgrid shell started at 15486@edatools-server2.iiitd.edu.in(local) jg_15293_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Exited with Success (@ 0.01 s)
+0.0.Ht: Proofgrid shell started at 55773@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
 0.0.Ht: Requesting engine job to terminate
 0.0.Ht: Interrupted. [0.00 s]
 0.0.Ht: Exited with Success (@ 0.05 s)
+0.0.B: Proofgrid shell started at 55774@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.B: Exited with Success (@ 0.05 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -199,18 +199,17 @@ ProofGrid Summary
      engine jobs started                           :     4
      times jobs never connected to ProofGrid       :     3
      jobs where 1 minute load exceeded core count  :     3
-     jobs where 5 minute load exceeded core count  :     3
      jobs where 15 minute load exceeded core count :     3
 
     Average time in state (seconds)
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.05        0.01        0.00       13.55 %
+      N        0.05        0.01        0.00       10.54 %
      Hp        0.06        0.00        0.00        0.00 %
      Ht        0.05        0.00        0.00        0.00 %
       B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        3.51 %
+    all        0.05        0.00        0.00        2.83 %
 
     Data read    : 3.69 kiB
     Data written : 998.00 B
@@ -251,7 +250,7 @@ determined
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Wednesday, Apr 1, 2026 12:20:27 PM IST
+    Printed on: Thursday, Apr 2, 2026 03:35:01 AM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -286,7 +285,7 @@ SUMMARY
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Wednesday, Apr 1, 2026 12:20:27 PM IST
+    Printed on: Thursday, Apr 2, 2026 03:35:01 AM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -301,11 +300,11 @@ RESULTS
 ---[ <embedded> ]-----------------------------------------------------------------------------
 [1]   counter.RST_CLEARS                          proven          PRE    Infinite    0.000 s      
 [2]   counter.RST_CLEARS:precondition1            unreachable     PRE    Infinite    0.000 s      
-[3]   counter.HOLD_STABLE                         proven          N      Infinite    0.001 s      
-[4]   counter.HOLD_STABLE:precondition1           covered         N             1    0.012 s      
+[3]   counter.HOLD_STABLE                         proven          N      Infinite    0.002 s      
+[4]   counter.HOLD_STABLE:precondition1           covered         N             1    0.013 s      
 [5]   counter.COUNT_INCR                          proven          N      Infinite    0.001 s      
 [6]   counter.COUNT_INCR:precondition1            covered         N             1    0.001 s      
-[7]   counter.COV_MAX                             covered         N            16    0.001 s      
+[7]   counter.COV_MAX                             covered         N            16    0.002 s      
 [<embedded>] % exit -force
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
