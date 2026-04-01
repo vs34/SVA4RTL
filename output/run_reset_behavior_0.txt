@@ -102,33 +102,35 @@ use check_assumptions -show -live to show this property in the property table
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 1
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 3489@edatools-server2.iiitd.edu.in(local) jg_3200_edatools-server2.iiitd.edu.in_1
+0.0.N: Proofgrid shell started at 56165@edatools-server2.iiitd.edu.in(local) jg_55823_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Proofgrid shell started at 56166@edatools-server2.iiitd.edu.in(local) jg_55823_edatools-server2.iiitd.edu.in_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Last scan. Per property time limit: 0s
 0.0.N: Starting proof for property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.00 s].
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Trace Attempt  1	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
-0.0.Hp: Proofgrid shell started at 3490@edatools-server2.iiitd.edu.in(local) jg_3200_edatools-server2.iiitd.edu.in_1
 0.0.N: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
 INFO (IPF144): 0: Initiating shutdown of proof [0.01]
 0.0.N: A trace with 2 cycles was found. [0.00 s]
 INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1" in 0.02 s.
 0.0.N: Stopped processing property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.02 s].
-0.0.Hp: Requesting engine job to terminate
-0.0.Hp: All properties determined. [0.00 s]
 0.0.N: All properties determined. [0.01 s]
-0.0.Hp: Exited with Success (@ 0.01 s)
+0.0.Hp: Interrupted (multi)
+0.0.Hp: All properties determined. [0.00 s]
+0.0.N: Exited with Success (@ 0.01 s)
 0: ProofGrid usable level: 0
-0.0.B: Proofgrid shell started at 3504@edatools-server2.iiitd.edu.in(local) jg_3200_edatools-server2.iiitd.edu.in_1
-0.0.B: Requesting engine job to terminate
-0.0.N: Exited with Success (@ 0.05 s)
-0.0.B: Interrupted. [0.00 s]
-0.0.B: Exited with Success (@ 0.05 s)
-0.0.Ht: Proofgrid shell started at 3503@edatools-server2.iiitd.edu.in(local) jg_3200_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Exited with Success (@ 0.01 s)
+0.0.Ht: Proofgrid shell started at 56197@edatools-server2.iiitd.edu.in(local) jg_55823_edatools-server2.iiitd.edu.in_1
 0.0.Ht: Requesting engine job to terminate
 0.0.Ht: Interrupted. [0.00 s]
 0.0.Ht: Exited with Success (@ 0.05 s)
+0.0.B: Proofgrid shell started at 56198@edatools-server2.iiitd.edu.in(local) jg_55823_edatools-server2.iiitd.edu.in_1
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.B: Exited with Success (@ 0.05 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -143,14 +145,14 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.05        0.01        0.00        9.37 %
-     Hp        0.05        0.00        0.00        0.01 %
+      N        0.06        0.00        0.00        7.34 %
+     Hp        0.06        0.00        0.00        7.46 %
      Ht        0.05        0.00        0.00        0.00 %
       B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        2.58 %
+    all        0.05        0.00        0.00        4.13 %
 
-    Data read    : 4.96 kiB
-    Data written : 1.17 kiB
+    Data read    : 5.27 kiB
+    Data written : 1.20 kiB
 
 0: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>" for proof thread 0

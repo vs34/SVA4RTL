@@ -1,49 +1,49 @@
-2026-03-31 12:06:54.379979 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.380145 (58810) main____ INFO    JasperGold version info
-2026-03-31 12:06:54.380173 (58810) main____ INFO      tool      : JasperGold 2019.09
-2026-03-31 12:06:54.380196 (58810) main____ INFO      version   : 2019.09p002 64 bits
-2026-03-31 12:06:54.380217 (58810) main____ INFO      build date: 2019.11.26 18:17:27 PST
-2026-03-31 12:06:54.380233 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.380245 (58810) main____ INFO    Runtime info:
-2026-03-31 12:06:54.380263 (58810) main____ INFO      platform  : Linux 2.6.32-754.35.1.el6.x86_64 x86_64
-2026-03-31 12:06:54.380288 (58810) main____ INFO      hostname  : edatools-server2.iiitd.edu.in
-2026-03-31 12:06:54.380302 (58810) main____ INFO      pid       : 58810
-2026-03-31 12:06:54.380318 (58810) main____ INFO      arguments : '-style' 'windows' '-fpv' '-batch' '-tcl' 'counter_jasper.tcl' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper'
-2026-03-31 12:06:54.380333 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.380346 (58810) main____ INFO    System resource limits info:
-2026-03-31 12:06:54.380360 (58810) main____ INFO      virtual memory: unlimited
-2026-03-31 12:06:54.380374 (58810) main____ INFO      cpu time      : unlimited
-2026-03-31 12:06:54.380409 (58810) main____ INFO      stack size    : 10485760 B
-2026-03-31 12:06:54.380436 (58810) main____ INFO      core file size: 0 B
-2026-03-31 12:06:54.380463 (58810) main____ INFO      open files    : 1024
-2026-03-31 12:06:54.380477 (58810) main____ INFO      file size     : unlimited
-2026-03-31 12:06:54.380494 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.380507 (58810) main____ INFO    Memory statistics:
-2026-03-31 12:06:54.380520 (58810) main____ INFO      total physical memory  : 528955884 kB
-2026-03-31 12:06:54.380532 (58810) main____ INFO      free physical memory   : 24358212 kB
-2026-03-31 12:06:54.380544 (58810) main____ INFO      committed address space: 767748572 kB
-2026-03-31 12:06:54.380556 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.380636 (58810) main____ INFO    Important environment variables:
-2026-03-31 12:06:54.380673 (58810) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
-2026-03-31 12:06:54.380694 (58810) main____ INFO      DISPLAY        : ':2100.0'
-2026-03-31 12:06:54.380713 (58810) main____ INFO      EDITOR         : 'gedit'
-2026-03-31 12:06:54.380731 (58810) main____ INFO      LM_LICENSE_FILE: '5280@14.139.1.126'
-2026-03-31 12:06:54.380744 (58810) main____ INFO    ----------------------------------------
-2026-03-31 12:06:54.381648 (58810) lic_core INFO    Initializing license system ...
-2026-03-31 12:06:54.382794 (58810) lic_core INFO    ... license system initialized.
-2026-03-31 12:06:54.384035 (58810) lic__man INFO    Claim 'fpv' for <ui>.
-2026-03-31 12:06:54.384080 (58810) lic_core INFO    (1) checking out 'jasper_fpv' ...
-2026-03-31 12:06:54.694931 (58810) lic_core INFO    ... (1) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
-2026-03-31 12:06:54.695021 (58810) lic_core INFO    (2) checking out 'jasper_fao' ...
-2026-03-31 12:06:55.064893 (58810) lic_core INFO    ... (2) checkout succeeded
-2026-03-31 12:06:55.083404 (58810) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
-2026-03-31 12:06:55.084357 (58810) session_ INFO    Analysis session with session id 'session_0' started (pid: 58842)
-2026-03-31 12:06:58.168826 (58810) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:58904)
-2026-03-31 12:07:00.821194 (58810) lic__man INFO    Unclaim everything for 'session_0'.
-2026-03-31 12:07:00.851070 (58810) lic__man INFO    Claim 'fpv' for 'session_0/prove-0'.
-2026-03-31 12:07:01.542405 (58810) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
-2026-03-31 12:07:01.545772 (58810) main____ INFO    About to exit: request to exit with status 0 received from analysis session 'session_0'
-2026-03-31 12:07:02.235588 (58810) session_ INFO    Analysis session 'session_0' disconnected.
-2026-03-31 12:07:02.235873 (58810) lic__man INFO    Unclaim everything for 'session_0'.
-2026-03-31 12:07:02.238731 (58810) session_ INFO    Process for analysis session 'session_0' has exited with exit status '0'.
-2026-03-31 12:07:03.596713 (58810) main____ INFO    Exiting with status 0.
+2026-03-31 21:30:40.949273 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.949453 (2923) main____ INFO    JasperGold version info
+2026-03-31 21:30:40.949486 (2923) main____ INFO      tool      : JasperGold 2019.09
+2026-03-31 21:30:40.949520 (2923) main____ INFO      version   : 2019.09p002 64 bits
+2026-03-31 21:30:40.949544 (2923) main____ INFO      build date: 2019.11.26 18:17:27 PST
+2026-03-31 21:30:40.949561 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.949575 (2923) main____ INFO    Runtime info:
+2026-03-31 21:30:40.949596 (2923) main____ INFO      platform  : Linux 2.6.32-754.35.1.el6.x86_64 x86_64
+2026-03-31 21:30:40.949620 (2923) main____ INFO      hostname  : edatools-server2.iiitd.edu.in
+2026-03-31 21:30:40.949636 (2923) main____ INFO      pid       : 2923
+2026-03-31 21:30:40.949656 (2923) main____ INFO      arguments : '-style' 'windows' '-fpv' '-batch' '-tcl' 'counter_jasper.tcl' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_counter_jasper'
+2026-03-31 21:30:40.949679 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.949695 (2923) main____ INFO    System resource limits info:
+2026-03-31 21:30:40.949713 (2923) main____ INFO      virtual memory: unlimited
+2026-03-31 21:30:40.949730 (2923) main____ INFO      cpu time      : unlimited
+2026-03-31 21:30:40.949774 (2923) main____ INFO      stack size    : 10485760 B
+2026-03-31 21:30:40.949807 (2923) main____ INFO      core file size: 0 B
+2026-03-31 21:30:40.949838 (2923) main____ INFO      open files    : 1024
+2026-03-31 21:30:40.949856 (2923) main____ INFO      file size     : unlimited
+2026-03-31 21:30:40.949872 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.949886 (2923) main____ INFO    Memory statistics:
+2026-03-31 21:30:40.949902 (2923) main____ INFO      total physical memory  : 528955884 kB
+2026-03-31 21:30:40.949917 (2923) main____ INFO      free physical memory   : 22257172 kB
+2026-03-31 21:30:40.949935 (2923) main____ INFO      committed address space: 768666236 kB
+2026-03-31 21:30:40.949950 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.950050 (2923) main____ INFO    Important environment variables:
+2026-03-31 21:30:40.950104 (2923) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
+2026-03-31 21:30:40.950144 (2923) main____ INFO      DISPLAY        : ':2100.0'
+2026-03-31 21:30:40.950181 (2923) main____ INFO      EDITOR         : 'gedit'
+2026-03-31 21:30:40.950217 (2923) main____ INFO      LM_LICENSE_FILE: '5280@14.139.1.126'
+2026-03-31 21:30:40.950242 (2923) main____ INFO    ----------------------------------------
+2026-03-31 21:30:40.951271 (2923) lic_core INFO    Initializing license system ...
+2026-03-31 21:30:40.951965 (2923) lic_core INFO    ... license system initialized.
+2026-03-31 21:30:40.955782 (2923) lic__man INFO    Claim 'fpv' for <ui>.
+2026-03-31 21:30:40.955908 (2923) lic_core INFO    (1) checking out 'jasper_fpv' ...
+2026-03-31 21:30:41.277667 (2923) lic_core INFO    ... (1) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-03-31 21:30:41.277758 (2923) lic_core INFO    (2) checking out 'jasper_fao' ...
+2026-03-31 21:30:41.643960 (2923) lic_core INFO    ... (2) checkout succeeded
+2026-03-31 21:30:41.662336 (2923) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-03-31 21:30:41.663568 (2923) session_ INFO    Analysis session with session id 'session_0' started (pid: 2940)
+2026-03-31 21:30:48.189040 (2923) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:54794)
+2026-03-31 21:30:50.023736 (2923) lic__man INFO    Unclaim everything for 'session_0'.
+2026-03-31 21:30:50.076169 (2923) lic__man INFO    Claim 'fpv' for 'session_0/prove-0'.
+2026-03-31 21:30:50.732847 (2923) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2026-03-31 21:30:50.742381 (2923) main____ INFO    About to exit: request to exit with status 0 received from analysis session 'session_0'
+2026-03-31 21:30:51.294508 (2923) session_ INFO    Analysis session 'session_0' disconnected.
+2026-03-31 21:30:51.294826 (2923) lic__man INFO    Unclaim everything for 'session_0'.
+2026-03-31 21:30:51.297885 (2923) session_ INFO    Process for analysis session 'session_0' has exited with exit status '0'.
+2026-03-31 21:30:52.828264 (2923) main____ INFO    Exiting with status 0.
