@@ -79,13 +79,13 @@ INFO (IPF031): Settings used for proof thread 0:
     proofgrid_restarts            = 10
 AMcustom2: Custom engine code is hT3N/LhP/2Dz3DrVSe2lNjiSpGmyu5Klv2ELvwL2WCQ+iY7rtAZ05ZC7TYTjerFjm57AUr54KxI2LGPAdQPc+eiMri1dI47yA50CRDdixbORmxz6cC+fZzChw2WXiQWUpM8rQS1DvRGCnsdRtkwXwn5/wC8U1oGSk2zvtl/p5mB+RV+nlTid0KCMqOgMR7nmW6XEAQA
 Ncustom3: Custom engine code is hT3NR7hPByLp3DrFSTPhwoIgCxPsqvZp21H/ym7EyTra3ms6eTBVZwJJnDhKmpN3woHootcWDlvmP07qcJRE1mUlIYMcSXUf1ExUD+hh5xN33vG9+qWOknUTM64CUjZpIk7qvPS+5IOws79QOzn5IqFPWD8RgByBUKPsu4ZUa9AO97P6cus4/HdmN+iijpsbAG5PrODXEeit9bdDREds7k7Rd2Vug5lgs78jIAEA
+Ncustom4: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom5: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
 0.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF051): 0.0.PRE: The cover property "counter.RST_CLEARS:precondition1" was proven unreachable in 0.00 s.
-Ncustom4: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
 0: Found proofs for 1 properties in preprocessing
 0: Using multistage preprocessing
 0: Starting reduce
-Tricustom5: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
 0: Finished reduce in 0s
 0.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF057): 0.0.PRE: The property "counter.RST_CLEARS" was proven in 0.00 s.
@@ -108,7 +108,7 @@ use check_assumptions -show -live to show this property in the property table
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 5
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 55759@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
+0.0.N: Proofgrid shell started at 43360@edatools-server2.iiitd.edu.in(local) jg_43196_edatools-server2.iiitd.edu.in_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.N: Starting proof for property "counter.HOLD_STABLE"	[0.00 s].
@@ -168,20 +168,20 @@ INFO (IPF144): 0: Initiating shutdown of proof [0.01]
 INFO (IPF047): 0.0.N: The cover property "counter.COV_MAX" was covered in 16 cycles in 0.00 s.
 0.0.N: Stopped processing property "counter.COV_MAX"	[0.00 s].
 0.0.N: All properties determined. [0.01 s]
+0.0.Hp: Proofgrid shell started at 43361@edatools-server2.iiitd.edu.in(local) jg_43196_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Requesting engine job to terminate
 0.0.N: Exited with Success (@ 0.01 s)
 0: ProofGrid usable level: 0
-0.0.Hp: Proofgrid shell started at 55760@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
-0.0.Hp: Requesting engine job to terminate
 0.0.Hp: Interrupted. [0.00 s]
 0.0.Hp: Exited with Success (@ 0.01 s)
-0.0.Ht: Proofgrid shell started at 55773@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
-0.0.Ht: Requesting engine job to terminate
-0.0.Ht: Interrupted. [0.00 s]
-0.0.Ht: Exited with Success (@ 0.05 s)
-0.0.B: Proofgrid shell started at 55774@edatools-server2.iiitd.edu.in(local) jg_55613_edatools-server2.iiitd.edu.in_1
+0.0.B: Proofgrid shell started at 43375@edatools-server2.iiitd.edu.in(local) jg_43196_edatools-server2.iiitd.edu.in_1
 0.0.B: Requesting engine job to terminate
 0.0.B: Interrupted. [0.00 s]
 0.0.B: Exited with Success (@ 0.05 s)
+0.0.Ht: Proofgrid shell started at 43374@edatools-server2.iiitd.edu.in(local) jg_43196_edatools-server2.iiitd.edu.in_1
+0.0.Ht: Requesting engine job to terminate
+0.0.Ht: Interrupted. [0.00 s]
+0.0.Ht: Exited with Success (@ 0.05 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -195,11 +195,11 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.05        0.01        0.00       10.54 %
+      N        0.05        0.01        0.00       10.76 %
      Hp        0.06        0.00        0.00        0.00 %
      Ht        0.05        0.00        0.00        0.00 %
       B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        2.83 %
+    all        0.05        0.00        0.00        2.90 %
 
     Data read    : 3.69 kiB
     Data written : 998.00 B
@@ -240,7 +240,7 @@ determined
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Thursday, Apr 2, 2026 03:35:01 AM IST
+    Printed on: Thursday, Apr 2, 2026 06:23:04 AM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -275,7 +275,7 @@ SUMMARY
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Thursday, Apr 2, 2026 03:35:01 AM IST
+    Printed on: Thursday, Apr 2, 2026 06:23:04 AM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -290,8 +290,8 @@ RESULTS
 ---[ <embedded> ]-----------------------------------------------------------------------------
 [1]   counter.RST_CLEARS                          proven          PRE    Infinite    0.000 s      
 [2]   counter.RST_CLEARS:precondition1            unreachable     PRE    Infinite    0.000 s      
-[3]   counter.HOLD_STABLE                         proven          N      Infinite    0.002 s      
-[4]   counter.HOLD_STABLE:precondition1           covered         N             1    0.013 s      
+[3]   counter.HOLD_STABLE                         proven          N      Infinite    0.001 s      
+[4]   counter.HOLD_STABLE:precondition1           covered         N             1    0.010 s      
 [5]   counter.COUNT_INCR                          proven          N      Infinite    0.001 s      
 [6]   counter.COUNT_INCR:precondition1            covered         N             1    0.001 s      
 [7]   counter.COV_MAX                             covered         N            16    0.002 s      
