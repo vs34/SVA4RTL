@@ -78,8 +78,8 @@ INFO (IPF031): Settings used for proof thread 0:
     proofgrid_mode                = local
     proofgrid_restarts            = 10
 0: Using multistage preprocessing
-0: Starting reduce
 AMcustom2: Custom engine code is hT3N/LhP/2Dz3DrVSe2lNjiSpGmyu5Klv2ELvwL2WCQ+iY7rtAZ05ZC7TYTjerFjm57AUr54KxI2LGPAdQPc+eiMri1dI47yA50CRDdixbORmxz6cC+fZzChw2WXiQWUpM8rQS1DvRGCnsdRtkwXwn5/wC8U1oGSk2zvtl/p5mB+RV+nlTid0KCMqOgMR7nmW6XEAQA
+0: Starting reduce
 Ncustom3: Custom engine code is hT3NR7hPByLp3DrFSTPhwoIgCxPsqvZp21H/ym7EyTra3ms6eTBVZwJJnDhKmpN3woHootcWDlvmP07qcJRE1mUlIYMcSXUf1ExUD+hh5xN33vG9+qWOknUTM64CUjZpIk7qvPS+5IOws79QOzn5IqFPWD8RgByBUKPsu4ZUa9AO97P6cus4/HdmN+iijpsbAG5PrODXEeit9bdDREds7k7Rd2Vug5lgs78jIAEA
 Ncustom4: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
 Tricustom5: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
@@ -102,14 +102,14 @@ use check_assumptions -show -live to show this property in the property table
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 1
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 37895@edatools-server2.iiitd.edu.in(local) jg_37743_edatools-server2.iiitd.edu.in_1
+0.0.N: Proofgrid shell started at 48563@edatools-server2.iiitd.edu.in(local) jg_48357_edatools-server2.iiitd.edu.in_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Last scan. Per property time limit: 0s
 0.0.N: Starting proof for property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.00 s].
-0.0.Hp: Proofgrid shell started at 37899@edatools-server2.iiitd.edu.in(local) jg_37743_edatools-server2.iiitd.edu.in_1
 0.0.N: Trace Attempt  1	[0.00 s]
-0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Proofgrid shell started at 48566@edatools-server2.iiitd.edu.in(local) jg_48357_edatools-server2.iiitd.edu.in_1
 0.0.N: Trace Attempt  2	[0.00 s]
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Requesting engine job to stop
 0.0.Hp: Requesting engine job to terminate
@@ -119,18 +119,18 @@ INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the pro
 0.0.N: Stopped processing property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.02 s].
 0.0.N: All properties determined. [0.01 s]
 0.0.Hp: Interrupted (multi)
-0.0.Hp: All properties determined. [0.00 s]
 0.0.N: Exited with Success (@ 0.01 s)
 0: ProofGrid usable level: 0
+0.0.Hp: All properties determined. [0.00 s]
 0.0.Hp: Exited with Success (@ 0.01 s)
-0.0.Ht: Proofgrid shell started at 37921@edatools-server2.iiitd.edu.in(local) jg_37743_edatools-server2.iiitd.edu.in_1
+0.0.Ht: Proofgrid shell started at 48580@edatools-server2.iiitd.edu.in(local) jg_48357_edatools-server2.iiitd.edu.in_1
 0.0.Ht: Requesting engine job to terminate
 0.0.Ht: Interrupted. [0.00 s]
-0.0.Ht: Exited with Success (@ 0.04 s)
-0.0.B: Proofgrid shell started at 37923@edatools-server2.iiitd.edu.in(local) jg_37743_edatools-server2.iiitd.edu.in_1
+0.0.B: Proofgrid shell started at 48584@edatools-server2.iiitd.edu.in(local) jg_48357_edatools-server2.iiitd.edu.in_1
 0.0.B: Requesting engine job to terminate
+0.0.Ht: Exited with Success (@ 0.06 s)
 0.0.B: Interrupted. [0.00 s]
-0.0.B: Exited with Success (@ 0.05 s)
+0.0.B: Exited with Success (@ 0.06 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -143,14 +143,14 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.05        0.01        0.00        9.56 %
-     Hp        0.05        0.00        0.00        7.11 %
+      N        0.04        0.00        0.00        9.13 %
+     Hp        0.04        0.00        0.00        6.01 %
      Ht        0.04        0.00        0.00        0.00 %
       B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        4.69 %
+    all        0.05        0.00        0.00        3.72 %
 
-    Data read    : 5.25 kiB
-    Data written : 1.20 kiB
+    Data read    : 5.24 kiB
+    Data written : 1.21 kiB
 
 0: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>" for proof thread 0
