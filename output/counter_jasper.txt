@@ -103,93 +103,65 @@ INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
 use check_assumptions -show to show this property in the property table
 INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
 use check_assumptions -show -live to show this property in the property table
-0.0.PRE: Proof Simplification completed in 0.00 s
+0.0.PRE: Proof Simplification completed in 0.68 s
 0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 5
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 58774@edatools-server2.iiitd.edu.in(local) jg_58461_edatools-server2.iiitd.edu.in_1
-0.0.Hp: Proofgrid shell started at 58775@edatools-server2.iiitd.edu.in(local) jg_58461_edatools-server2.iiitd.edu.in_1
-0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
-0.0.N: Starting proof for property "counter.HOLD_STABLE"	[0.00 s].
-0.0.N: Trace Attempt  1	[0.00 s]
-0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
-INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.HOLD_STABLE" in 0.00 s.
-0.0.N: Trace Attempt  2	[0.00 s]
+0.0.Hp: Proofgrid shell started at 24635@edatools-server2.iiitd.edu.in(local) jg_23880_edatools-server2.iiitd.edu.in_1
 0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0.0.N: Trace Attempt  2	[0.00 s]
-0.0.N: Trace Attempt  3	[0.00 s]
-0.0.N: Trace Attempt  4	[0.00 s]
-0.0.N: Trace Attempt  5	[0.00 s]
 0.0.Hp: Trace Attempt  1	[0.00 s]
 0.0.Hp: A trace with 1 cycles was found. [0.00 s]
-INFO (IPF047): 0.0.Hp: The cover property "counter.HOLD_STABLE:precondition1" was covered in 1 cycles in 0.01 s.
+INFO (IPF047): 0.0.Hp: The cover property "counter.HOLD_STABLE:precondition1" was covered in 1 cycles in 0.03 s.
 0.0.Hp: A trace with 1 cycles was found. [0.00 s]
-INFO (IPF047): 0.0.Hp: The cover property "counter.COUNT_INCR:precondition1" was covered in 1 cycles in 0.02 s.
-0.0.N: Trace Attempt  1	[0.00 s]
-0.0.N: Trace Attempt  2	[0.00 s]
+INFO (IPF047): 0.0.Hp: The cover property "counter.COUNT_INCR:precondition1" was covered in 1 cycles in 0.03 s.
 0.0.Hp: A proof was found: No trace exists. [0.00 s]
-INFO (IPF057): 0.0.Hp: The property "counter.HOLD_STABLE" was proven in 0.02 s.
+INFO (IPF057): 0.0.Hp: The property "counter.HOLD_STABLE" was proven in 0.03 s.
 0.0.Hp: A proof was found: No trace exists. [0.00 s]
-INFO (IPF057): 0.0.Hp: The property "counter.COUNT_INCR" was proven in 0.02 s.
+INFO (IPF057): 0.0.Hp: The property "counter.COUNT_INCR" was proven in 0.04 s.
 0.0.Hp: Trace Attempt  2	[0.00 s]
 0.0.Hp: Trace Attempt  3	[0.00 s]
 0.0.Hp: Trace Attempt  4	[0.00 s]
 0.0.Hp: Trace Attempt  5	[0.00 s]
-0.0.N: Validation of fixpoint was successful. Time = 0.00
-0.0.N: Stopped processing property "counter.HOLD_STABLE"	[0.02 s].
-0.0.N: Last scan. Per property time limit: 0s
-0.0.N: Starting proof for property "counter.COV_MAX"	[0.00 s].
-0.0.N: Trace Attempt  1	[0.00 s]
-0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
-INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.COV_MAX" in 0.00 s.
-0.0.N: Trace Attempt  2	[0.00 s]
-0.0.N: Trace Attempt  3	[0.00 s]
-0.0.N: Trace Attempt  3	[0.00 s]
-0.0.N: Trace Attempt  4	[0.00 s]
-0.0.N: Trace Attempt  5	[0.00 s]
-0.0.N: Requesting engine job to stop
 0.0.Hp: Requesting engine job to terminate
 INFO (IPF144): 0: Initiating shutdown of proof [0.01]
-0.0.Hp: Trace Attempt 16	[0.00 s]
-0.0.Hp: A trace with 16 cycles was found. [0.00 s]
-INFO (IPF047): 0.0.Hp: The cover property "counter.COV_MAX" was covered in 16 cycles in 0.02 s.
-0.0.Hp: All properties determined. [0.00 s]
-0.0.N: Stopped processing property "counter.COV_MAX"	[0.00 s].
-0.0.N: Trace Attempt 16	[0.00 s]
-0.0.N: All properties determined. [0.01 s]
+0.0.Hp: Trace Attempt 16	[0.01 s]
+0.0.Hp: A trace with 16 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Hp: The cover property "counter.COV_MAX" was covered in 16 cycles in 0.04 s.
+0.0.Hp: All properties determined. [0.01 s]
 0.0.Hp: Exited with Success (@ 0.01 s)
 0: ProofGrid usable level: 0
-0.0.N: Exited with Success (@ 0.01 s)
-0.0.Ht: Proofgrid shell started at 58795@edatools-server2.iiitd.edu.in(local) jg_58461_edatools-server2.iiitd.edu.in_1
+0.0.Ht: Proofgrid shell started at 24653@edatools-server2.iiitd.edu.in(local) jg_23880_edatools-server2.iiitd.edu.in_1
 0.0.Ht: Requesting engine job to terminate
 0.0.Ht: Interrupted. [0.00 s]
-0.0.B: Proofgrid shell started at 58796@edatools-server2.iiitd.edu.in(local) jg_58461_edatools-server2.iiitd.edu.in_1
-0.0.B: Requesting engine job to terminate
-0.0.Ht: Exited with Success (@ 0.05 s)
-0.0.B: Interrupted. [0.00 s]
-0.0.B: Exited with Success (@ 0.05 s)
+0.0.Ht: Exited with Success (@ 0.03 s)
+0.0.N: Proofgrid shell started at 24633@edatools-server2.iiitd.edu.in(local) jg_23880_edatools-server2.iiitd.edu.in_1
+0.0.N: Requesting engine job to terminate
+0.0.N: Interrupted. [0.00 s]
+0.0.N: Exited with Success (@ 1.20 s)
+0.0.B: Sending SIGKILL
+0.0.B: Terminated by signal SIGKILL (@ 2.32 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
      engines started                               :     4
      engine jobs started                           :     4
-     times jobs never connected to ProofGrid       :     2
+     times jobs never connected to ProofGrid       :     3
+     jobs where 1 minute load exceeded core count  :     2
      jobs where 15 minute load exceeded core count :     2
 
     Average time in state (seconds)
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.06        0.00        0.00        7.87 %
-     Hp        0.06        0.00        0.00        7.70 %
-     Ht        0.05        0.00        0.00        0.00 %
-      B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        4.32 %
+      N        2.42        0.00        0.00        0.00 %
+     Hp        1.22        0.01        0.00        0.65 %
+     Ht        0.75        0.00        0.00        0.00 %
+      B        2.42        0.00        0.00        0.00 %
+    all        1.70        0.00        0.00        0.12 %
 
-    Data read    : 4.29 kiB
-    Data written : 1.65 kiB
+    Data read    : 2.16 kiB
+    Data written : 856.00 B
 
 0: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>" for proof thread 0
@@ -227,7 +199,7 @@ determined
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Saturday, Apr 4, 2026 09:26:07 PM IST
+    Printed on: Saturday, Apr 4, 2026 09:40:31 PM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -262,7 +234,7 @@ SUMMARY
     2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
     Host Name: localhost
     User Name: vaibhav22555
-    Printed on: Saturday, Apr 4, 2026 09:26:07 PM IST
+    Printed on: Saturday, Apr 4, 2026 09:40:31 PM IST
     Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
 
 
@@ -277,11 +249,11 @@ RESULTS
 ---[ <embedded> ]-----------------------------------------------------------------------------
 [1]   counter.RST_CLEARS                          proven          PRE    Infinite    0.000 s      
 [2]   counter.RST_CLEARS:precondition1            unreachable     PRE    Infinite    0.000 s      
-[3]   counter.HOLD_STABLE                         proven          Hp     Infinite    0.017 s      
-[4]   counter.HOLD_STABLE:precondition1           covered         Hp            1    0.015 s      
-[5]   counter.COUNT_INCR                          proven          Hp     Infinite    0.018 s      
-[6]   counter.COUNT_INCR:precondition1            covered         Hp            1    0.016 s      
-[7]   counter.COV_MAX                             covered         Hp           16    0.021 s      
+[3]   counter.HOLD_STABLE                         proven          Hp     Infinite    0.035 s      
+[4]   counter.HOLD_STABLE:precondition1           covered         Hp            1    0.032 s      
+[5]   counter.COUNT_INCR                          proven          Hp     Infinite    0.035 s      
+[6]   counter.COUNT_INCR:precondition1            covered         Hp            1    0.034 s      
+[7]   counter.COV_MAX                             covered         Hp           16    0.037 s      
 [<embedded>] % exit -force
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
