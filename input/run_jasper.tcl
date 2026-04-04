@@ -2,9 +2,9 @@
 clear -all
 
 # Analyze design files
-analyze -sv /Users/vs/pro/Formal-verif-agent-v2Kapil/sample_project/rtl/axi_lite_slave.sv
-analyze -sv /Users/vs/pro/Formal-verif-agent-v2Kapil/sample_project/fv_runs/sva_20260404_204309/sva/sva_protocol_compliance_checker.sv
-analyze -sv /Users/vs/pro/Formal-verif-agent-v2Kapil/sample_project/fv_runs/sva_20260404_204309/sva/bind_axi_lite_slave.sv
+analyze -sv axi_lite_slave.sv
+analyze -sv sva_protocol_compliance_checker.sv
+analyze -sv bind_axi_lite_slave.sv
 
 elaborate -top axi_lite_slave
 
