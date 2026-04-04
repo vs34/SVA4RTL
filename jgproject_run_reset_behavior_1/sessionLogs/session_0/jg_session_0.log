@@ -5,10 +5,10 @@
 # version   : 2019.09p002 64 bits
 # build date: 2019.11.26 18:17:27 PST
 #----------------------------------------
-# started Sat Apr 04 08:26:29 IST 2026
+# started Sat Apr 04 20:14:29 IST 2026
 # hostname  : edatools-server2.iiitd.edu.in
-# pid       : 16062
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35640' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.initCmds.tcl' 'run_reset_behavior_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.postCmds.tcl'
+# pid       : 42332
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:33028' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/sessionLogs/session_0' '-init' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.initCmds.tcl' 'run_reset_behavior_1.tcl' '-hidden' '/home/vaibhav22555/Desktop/SVA4RTL/jgproject_run_reset_behavior_1/.tmp/.postCmds.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -112,41 +112,33 @@ use check_assumptions -show -live to show this property in the property table
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 1
 0: ProofGrid is starting event handling
-0.0.Hp: Proofgrid shell started at 16202@edatools-server2.iiitd.edu.in(local) jg_16062_edatools-server2.iiitd.edu.in_1
-0.0.N: Proofgrid shell started at 16201@edatools-server2.iiitd.edu.in(local) jg_16062_edatools-server2.iiitd.edu.in_1
-0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Proofgrid shell started at 42522@edatools-server2.iiitd.edu.in(local) jg_42332_edatools-server2.iiitd.edu.in_1
 0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0.0.N: Last scan. Per property time limit: 0s
-0.0.N: Starting proof for property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.00 s].
-0.0.N: Trace Attempt  1	[0.00 s]
 0.0.Hp: Trace Attempt  1	[0.01 s]
 0.0.Hp: Trace Attempt  2	[0.01 s]
-0.0.N: Requesting engine job to stop
 0.0.Hp: Requesting engine job to terminate
 INFO (IPF144): 0: Initiating shutdown of proof [0.01]
 0.0.Hp: A trace with 2 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Hp: A counterexample (cex) with 2 cycles was found for the property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1" in 0.02 s.
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 2 cycles was found for the property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1" in 0.11 s.
 0.0.Hp: All properties determined. [0.01 s]
-0.0.Hp: Exited with Success (@ 0.01 s)
+0.0.Hp: Exited with Success (@ 0.03 s)
 0: ProofGrid usable level: 0
-0.0.N: Trace Attempt  2	[0.01 s]
-0.0.N: Stopped processing property "mbox_ctrl.u_mbox_ctrl_reset_behavior_assert._assert_1"	[0.02 s].
-0.0.N: All properties determined. [0.01 s]
-0.0.B: Proofgrid shell started at 16235@edatools-server2.iiitd.edu.in(local) jg_16062_edatools-server2.iiitd.edu.in_1
-0.0.B: Requesting engine job to terminate
-0.0.N: Exited with Success (@ 0.05 s)
-0.0.B: Interrupted. [0.00 s]
-0.0.B: Exited with Success (@ 0.05 s)
-0.0.Ht: Proofgrid shell started at 16232@edatools-server2.iiitd.edu.in(local) jg_16062_edatools-server2.iiitd.edu.in_1
+0.0.Ht: Proofgrid shell started at 42544@edatools-server2.iiitd.edu.in(local) jg_42332_edatools-server2.iiitd.edu.in_1
 0.0.Ht: Requesting engine job to terminate
 0.0.Ht: Interrupted. [0.00 s]
-0.0.Ht: Exited with Success (@ 0.06 s)
+0.0.Ht: Exited with Success (@ 0.45 s)
+0.0.N: Proofgrid shell started at 42521@edatools-server2.iiitd.edu.in(local) jg_42332_edatools-server2.iiitd.edu.in_1
+0.0.N: Requesting engine job to terminate
+0.0.N: Interrupted. [0.00 s]
+0.0.N: Exited with Success (@ 1.40 s)
+0.0.B: Sending SIGKILL
+0.0.B: Terminated by signal SIGKILL (@ 2.33 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
      engines started                               :     4
      engine jobs started                           :     4
-     times jobs never connected to ProofGrid       :     2
+     times jobs never connected to ProofGrid       :     3
      jobs where 1 minute load exceeded core count  :     2
      jobs where 5 minute load exceeded core count  :     2
      jobs where 15 minute load exceeded core count :     2
@@ -155,14 +147,14 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.05        0.01        0.00        9.35 %
-     Hp        0.05        0.01        0.00       10.21 %
-     Ht        0.06        0.00        0.00        0.00 %
-      B        0.05        0.00        0.00        0.00 %
-    all        0.05        0.00        0.00        4.96 %
+      N        3.69        0.00        0.00        0.00 %
+     Hp        2.29        0.01        0.00        0.39 %
+     Ht        2.23        0.00        0.00        0.00 %
+      B        3.44        0.00        0.00        0.00 %
+    all        2.91        0.00        0.00        0.08 %
 
-    Data read    : 5.15 kiB
-    Data written : 1.19 kiB
+    Data read    : 4.73 kiB
+    Data written : 618.00 B
 
 0: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>" for proof thread 0
