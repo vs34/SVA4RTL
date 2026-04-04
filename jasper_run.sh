@@ -57,7 +57,12 @@ fi
 echo "Source files : ${SV_FILES[*]:-<none>}"
 echo "TCL scripts  : ${TCL_FILES[*]}"
 
-# ── 2. Copy input files ───────────────────────────────────────────────────────
+# ── 2. Sync with upstream ─────────────────────────────────────────────────────
+
+echo "Syncing with upstream..."
+git -C "$REPO" pull --rebase origin "$BRANCH"
+
+# ── 4. Copy input files ───────────────────────────────────────────────────────
 
 mkdir -p "$INPUT_DIR"
 
@@ -109,6 +114,10 @@ fi
 # ── 4. Git add, commit, push ──────────────────────────────────────────────────
 
 cd "$REPO"
+
+# Write a timestamp file so there is always a change to commit even if the
+# source files are identical to the previous run.
+echo "$(date '+%Y-%m-%d_%H:%M:%S')" > "$INPUT_DIR/.run_timestamp"
 
 git add "$INPUT_DIR" "$SCRIPT_DIR"
 git commit -m "JasperRun_$(date '+%Y-%m-%d_%H:%M:%S')"
@@ -182,5 +191,10 @@ echo ""
 echo "══════════════════════════════════════"
 echo "  Summary: $PASS/$TOTAL runs passed"
 echo "══════════════════════════════════════"
+
+# ── 8. Clean input dir locally (no commit/push) ───────────────────────────────
+
+rm -f "$INPUT_DIR"/*
+echo "Cleaned local input/ directory."
 
 [ $FAIL -eq 0 ]
