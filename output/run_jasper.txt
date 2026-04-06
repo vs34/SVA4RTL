@@ -48,32 +48,34 @@ INFO (IPF121): Cleared environment completely for new design analysis.
 [-- (VERI-1482)] Analyzing Verilog file 'axi_lite_slave.sv'
 % analyze -sv sva_protocol_compliance_checker.sv
 [-- (VERI-1482)] Analyzing Verilog file 'sva_protocol_compliance_checker.sv'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(54): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(197): syntax error near '[->'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(203): syntax error near '[->'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(209): syntax error near '[->'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(257): syntax error near 'throughout'
-[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(257): SystemVerilog 2005 keyword throughout used in incorrect context
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(263): syntax error near 'throughout'
-[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(263): SystemVerilog 2005 keyword throughout used in incorrect context
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(353): syntax error near '[->'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(359): syntax error near '[->'
-[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(416): module 'sva_protocol_compliance_checker' ignored due to previous errors
-Summary of errors detected:
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(54): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(197): syntax error near '[->'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(203): syntax error near '[->'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(209): syntax error near '[->'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(257): syntax error near 'throughout'
-	[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(257): SystemVerilog 2005 keyword throughout used in incorrect context
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(263): syntax error near 'throughout'
-	[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(263): SystemVerilog 2005 keyword throughout used in incorrect context
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(353): syntax error near '[->'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(359): syntax error near '[->'
-	[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(416): module 'sva_protocol_compliance_checker' ignored due to previous errors
-ERROR (ENL034): 11 errors detected in the design file(s).
+% analyze -sv bind_axi_lite_slave.sv
+[-- (VERI-1482)] Analyzing Verilog file 'bind_axi_lite_slave.sv'
+% 
+% elaborate -top axi_lite_slave
+INFO (ISW003): Top module name is "axi_lite_slave".
+[INFO (HIER-8002)] axi_lite_slave.sv(162): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] axi_lite_slave.sv(5): compiling module 'axi_lite_slave'
+[INFO (VERI-1018)] sva_protocol_compliance_checker.sv(7): compiling module 'sva_protocol_compliance_checker:(ADDR_WIDTH=32'b01100,DATA_WIDTH=32'b0100000)'
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(223): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(229): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(235): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(241): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(247): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(253): system function call isunknown with non-constant argument is not synthesizable
+[WARN (VERI-1796)] sva_protocol_compliance_checker.sv(259): system function call isunknown with non-constant argument is not synthesizable
+axi_lite_slave
+[<embedded>] % 
+[<embedded>] % # Clock and reset (auto-detected from IR)
+[<embedded>] % clock clk
+[<embedded>] % reset ~rst_n
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "rst_n".
+[<embedded>] % 
+[<embedded>] % # Engine configuration
+[<embedded>] % set_engine_mode {Ht Hp Br}
+ERROR (EPF051): Unknown engine(s): Br
 
-ERROR: problem encountered at line 6 in file run_jasper.tcl
+ERROR: problem encountered at line 16 in file run_jasper.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
