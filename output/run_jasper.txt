@@ -48,46 +48,46 @@ INFO (IPF121): Cleared environment completely for new design analysis.
 [-- (VERI-1482)] Analyzing Verilog file 'axi_lite_slave.sv'
 % analyze -sv sva_protocol_compliance_checker.sv
 [-- (VERI-1482)] Analyzing Verilog file 'sva_protocol_compliance_checker.sv'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(50): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(74): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(78): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(82): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(90): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(91): syntax error near '('
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(94): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(95): syntax error near '('
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(98): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(102): syntax error near '@'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near '('
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near '('
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(107): syntax error near '##'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(111): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(115): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(119): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(123): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(127): syntax error near ')'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(131): syntax error near ')'
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'valid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'ready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'valid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(35): 'valid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(35): 'ready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bready' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(75): 's_rvalid' is not declared
+[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(75): 's_rready' is not declared
 [INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
 Summary of errors detected:
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(50): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(74): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(78): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(82): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(90): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(91): syntax error near '('
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(94): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(95): syntax error near '('
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(98): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(102): syntax error near '@'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near '('
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near '('
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(107): syntax error near '##'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(111): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(115): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(119): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(123): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(127): syntax error near ')'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(131): syntax error near ')'
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'valid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'ready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(26): 'valid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(35): 'valid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(35): 'ready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(51): 's_awvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 's_wvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(63): 's_arvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bready' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(69): 's_bvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(75): 's_rvalid' is not declared
+	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(75): 's_rready' is not declared
 ERROR (ENL034): 19 errors detected in the design file(s).
 
 ERROR: problem encountered at line 6 in file run_jasper.tcl
