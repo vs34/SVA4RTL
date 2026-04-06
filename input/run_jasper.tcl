@@ -13,7 +13,7 @@ clock clk
 reset ~rst_n
 
 # Engine configuration
-set_engine_mode {Ht Hp Br}
+set_engine_mode {Ht Hp}
 
 set_max_trace_length 20
 set_prove_time_limit 300s
