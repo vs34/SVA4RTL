@@ -48,24 +48,30 @@ INFO (IPF121): Cleared environment completely for new design analysis.
 [-- (VERI-1482)] Analyzing Verilog file 'axi_lite_slave.sv'
 % analyze -sv sva_protocol_compliance_checker.sv
 [-- (VERI-1482)] Analyzing Verilog file 'sva_protocol_compliance_checker.sv'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(355): syntax error near 'until_with'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(356): syntax error near ')'
-[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'valid' is not declared
-[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'ready' is not declared
-[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'valid' is not declared
-[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 'valid' is not declared
-[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 'ready' is not declared
-[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(388): module 'sva_protocol_compliance_checker' ignored due to previous errors
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(54): syntax error near ')'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(197): syntax error near '[->'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(203): syntax error near '[->'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(209): syntax error near '[->'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(257): syntax error near 'throughout'
+[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(257): SystemVerilog 2005 keyword throughout used in incorrect context
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(263): syntax error near 'throughout'
+[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(263): SystemVerilog 2005 keyword throughout used in incorrect context
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(353): syntax error near '[->'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(359): syntax error near '[->'
+[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(416): module 'sva_protocol_compliance_checker' ignored due to previous errors
 Summary of errors detected:
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(355): syntax error near 'until_with'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(356): syntax error near ')'
-	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'valid' is not declared
-	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'ready' is not declared
-	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(48): 'valid' is not declared
-	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 'valid' is not declared
-	[ERROR (VERI-1128)] sva_protocol_compliance_checker.sv(57): 'ready' is not declared
-	[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(388): module 'sva_protocol_compliance_checker' ignored due to previous errors
-ERROR (ENL034): 8 errors detected in the design file(s).
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(54): syntax error near ')'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(197): syntax error near '[->'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(203): syntax error near '[->'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(209): syntax error near '[->'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(257): syntax error near 'throughout'
+	[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(257): SystemVerilog 2005 keyword throughout used in incorrect context
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(263): syntax error near 'throughout'
+	[ERROR (VERI-2344)] sva_protocol_compliance_checker.sv(263): SystemVerilog 2005 keyword throughout used in incorrect context
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(353): syntax error near '[->'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(359): syntax error near '[->'
+	[ERROR (VERI-1072)] sva_protocol_compliance_checker.sv(416): module 'sva_protocol_compliance_checker' ignored due to previous errors
+ERROR (ENL034): 11 errors detected in the design file(s).
 
 ERROR: problem encountered at line 6 in file run_jasper.tcl
 
