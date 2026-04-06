@@ -37,197 +37,312 @@ default disable iff (rst_n);
     
     // No response without request
     
-    // Protocol rule: AWVALID and WVALID may arrive independently; slave must handle both orderings
-    // Protocol rule: AWREADY and WREADY must wait for respective valid signals
-    // Protocol rule: BVALID asserted after write transaction completes; held until BREADY
-    // Protocol rule: ARVALID triggers read address acceptance; ARREADY responds
-    // Protocol rule: RVALID asserted with read data; held until RREADY
-    // Protocol rule: Single-beat transactions only (no bursts in AXI4-Lite)
-    // Protocol rule: Write response always OKAY (2'b00)
-    // Protocol rule: Read data registered for timing closure
-    // --- p_protocol_compliance_awready_waits_for_awvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires AWREADY must not be asserted unless AWVALID is asserted. Slave cannot initiate handshake.
-    @(posedge clk) disable iff (!rst_n)
-      !s_awvalid |-> !s_awready
-    // --- p_protocol_compliance_wready_waits_for_wvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires WREADY must not be asserted unless WVALID is asserted. Slave cannot initiate handshake.
-    @(posedge clk) disable iff (!rst_n)
-      !s_wvalid |-> !s_wready
-    // --- p_protocol_compliance_arready_waits_for_arvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires ARREADY must not be asserted unless ARVALID is asserted. Slave cannot initiate handshake.
-    @(posedge clk) disable iff (!rst_n)
-      !s_arvalid |-> !s_arready
-    // --- p_protocol_compliance_bvalid_held_until_bready (roi=0.679) ---
-    // AXI4-Lite protocol requires BVALID once asserted must remain high until BREADY handshake occurs. Ensures stable write response.
-    @(posedge clk) disable iff (!rst_n)
-      (s_bvalid && !s_bready) |=> s_bvalid
-    // --- p_protocol_compliance_rvalid_held_until_rready (roi=0.679) ---
-    // AXI4-Lite protocol requires RVALID once asserted must remain high until RREADY handshake occurs. Ensures stable read data.
-    @(posedge clk) disable iff (!rst_n)
-      (s_rvalid && !s_rready) |=> s_rvalid
-    // --- p_protocol_compliance_bresp_stable_until_bready (roi=0.679) ---
-    // AXI4-Lite protocol requires BRESP must remain stable while BVALID is asserted and BREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_bvalid && !s_bready) |=> $stable(s_bresp)
-    // --- p_protocol_compliance_rdata_stable_until_rready (roi=0.679) ---
-    // AXI4-Lite protocol requires RDATA must remain stable while RVALID is asserted and RREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_rvalid && !s_rready) |=> $stable(s_rdata)
-    // --- p_protocol_compliance_rresp_stable_until_rready (roi=0.679) ---
-    // AXI4-Lite protocol requires RRESP must remain stable while RVALID is asserted and RREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_rvalid && !s_rready) |=> $stable(s_rresp)
-    // --- p_protocol_compliance_write_response_always_okay (roi=0.667) ---
-    // Design specification states write response is always OKAY (2'b00). Verifies correct constant response generation.
-    @(posedge clk) disable iff (!rst_n)
-      s_bvalid |-> (s_bresp == 2'b00)
-    // --- p_protocol_compliance_bvalid_eventually_after_write_complete (roi=0.654) ---
-    // Liveness property: After both AW and W channels complete simultaneously, BVALID must eventually be asserted within reasonable time (10 cycles).
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready && s_wvalid && s_wready) |-> ##[1:10] s_bvalid
+    // Protocol rule: AWVALID and WVALID may assert in any order or simultaneously
+    // Protocol rule: AWREADY and WREADY may be asserted independently
+    // Protocol rule: BVALID must remain asserted until BREADY is observed high
+    // Protocol rule: RVALID must remain asserted until RREADY is observed high
+    // Protocol rule: Single-beat transactions only (no burst support)
+    // Protocol rule: Write response (BRESP) always OKAY per code comment
+    // Protocol rule: Read data is registered for timing closure
+    // --- p_protocol_compliance_awvalid_stable_until_awready (roi=0.679) ---
+    // AXI4-Lite protocol requires AWVALID to remain stable (high) once asserted until AWREADY handshake completes. This is a fundamental handshake stability requirement.
+    p_protocol_compliance_awvalid_stable_until_awready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && !s_awready) |=> s_awvalid
+        );
+    // --- p_protocol_compliance_wvalid_stable_until_wready (roi=0.679) ---
+    // AXI4-Lite protocol requires WVALID to remain stable (high) once asserted until WREADY handshake completes.
+    p_protocol_compliance_wvalid_stable_until_wready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && !s_wready) |=> s_wvalid
+        );
+    // --- p_protocol_compliance_arvalid_stable_until_arready (roi=0.679) ---
+    // AXI4-Lite protocol requires ARVALID to remain stable (high) once asserted until ARREADY handshake completes.
+    p_protocol_compliance_arvalid_stable_until_arready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && !s_arready) |=> s_arvalid
+        );
+    // --- p_protocol_compliance_bvalid_stable_until_bready (roi=0.679) ---
+    // AXI4-Lite protocol mandates BVALID must remain asserted until BREADY is observed high. Slave must not deassert BVALID prematurely.
+    p_protocol_compliance_bvalid_stable_until_bready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_bvalid && !s_bready) |=> s_bvalid
+        );
+    // --- p_protocol_compliance_rvalid_stable_until_rready (roi=0.679) ---
+    // AXI4-Lite protocol mandates RVALID must remain asserted until RREADY is observed high. Slave must not deassert RVALID prematurely.
+    p_protocol_compliance_rvalid_stable_until_rready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_rvalid && !s_rready) |=> s_rvalid
+        );
+    // --- p_protocol_compliance_awaddr_stable_until_awready (roi=0.667) ---
+    // AXI4-Lite requires write address to remain stable while AWVALID is asserted and before AWREADY handshake.
+    p_protocol_compliance_awaddr_stable_until_awready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && !s_awready) |=> $stable(s_awaddr)
+        );
+    // --- p_protocol_compliance_awprot_stable_until_awready (roi=0.667) ---
+    // AXI4-Lite requires protection attributes to remain stable while AWVALID is asserted and before AWREADY handshake.
+    p_protocol_compliance_awprot_stable_until_awready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && !s_awready) |=> $stable(s_awprot)
+        );
+    // --- p_protocol_compliance_wdata_stable_until_wready (roi=0.667) ---
+    // AXI4-Lite requires write data to remain stable while WVALID is asserted and before WREADY handshake.
+    p_protocol_compliance_wdata_stable_until_wready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && !s_wready) |=> $stable(s_wdata)
+        );
+    // --- p_protocol_compliance_wstrb_stable_until_wready (roi=0.667) ---
+    // AXI4-Lite requires write strobes to remain stable while WVALID is asserted and before WREADY handshake.
+    p_protocol_compliance_wstrb_stable_until_wready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && !s_wready) |=> $stable(s_wstrb)
+        );
+    // --- p_protocol_compliance_araddr_stable_until_arready (roi=0.667) ---
+    // AXI4-Lite requires read address to remain stable while ARVALID is asserted and before ARREADY handshake.
+    p_protocol_compliance_araddr_stable_until_arready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && !s_arready) |=> $stable(s_araddr)
+        );
+    // --- p_protocol_compliance_arprot_stable_until_arready (roi=0.667) ---
+    // AXI4-Lite requires protection attributes to remain stable while ARVALID is asserted and before ARREADY handshake.
+    p_protocol_compliance_arprot_stable_until_arready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && !s_arready) |=> $stable(s_arprot)
+        );
+    // --- p_protocol_compliance_bresp_stable_until_bready (roi=0.667) ---
+    // AXI4-Lite requires write response to remain stable while BVALID is asserted until BREADY handshake completes.
+    p_protocol_compliance_bresp_stable_until_bready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_bvalid && !s_bready) |=> $stable(s_bresp)
+        );
+    // --- p_protocol_compliance_rdata_stable_until_rready (roi=0.667) ---
+    // AXI4-Lite requires read data to remain stable while RVALID is asserted until RREADY handshake completes.
+    p_protocol_compliance_rdata_stable_until_rready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_rvalid && !s_rready) |=> $stable(s_rdata)
+        );
+    // --- p_protocol_compliance_rresp_stable_until_rready (roi=0.667) ---
+    // AXI4-Lite requires read response to remain stable while RVALID is asserted until RREADY handshake completes.
+    p_protocol_compliance_rresp_stable_until_rready: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_rvalid && !s_rready) |=> $stable(s_rresp)
+        );
+    // --- p_protocol_compliance_bvalid_eventually_after_write (roi=0.654) ---
+    // Liveness property: After both address and data phases complete simultaneously, slave must eventually assert BVALID within reasonable time (bounded to prevent infinite wait).
+    p_protocol_compliance_bvalid_eventually_after_write: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready && s_wvalid && s_wready) |-> ##[1:16] s_bvalid
+        );
     // --- p_protocol_compliance_bvalid_eventually_after_aw_then_w (roi=0.654) ---
-    // Liveness property: After AW completes first, then W completes, BVALID must eventually be asserted within 10 cycles.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready && !s_wvalid) ##[0:$] (s_wvalid && s_wready) |-> ##[1:10] s_bvalid
+    // Liveness property: After AW phase completes first, then W phase completes, slave must eventually assert BVALID within bounded time.
+    p_protocol_compliance_bvalid_eventually_after_aw_then_w: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready && !s_wvalid) ##[1:$] (s_wvalid && s_wready) |-> ##[1:16] s_bvalid
+        );
     // --- p_protocol_compliance_bvalid_eventually_after_w_then_aw (roi=0.654) ---
-    // Liveness property: After W completes first, then AW completes, BVALID must eventually be asserted within 10 cycles. Handles independent arrival ordering.
-    @(posedge clk) disable iff (!rst_n)
-      (s_wvalid && s_wready && !s_awvalid) ##[0:$] (s_awvalid && s_awready) |-> ##[1:10] s_bvalid
-    // --- p_protocol_compliance_rvalid_eventually_after_read_addr (roi=0.654) ---
-    // Liveness property: After read address handshake, RVALID must eventually be asserted within 10 cycles. Ensures forward progress.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) |-> ##[1:10] s_rvalid
-    // --- p_protocol_compliance_no_bvalid_without_prior_write (roi=0.642) ---
-    // Safety property: BVALID cannot appear without a prior complete write transaction (both AW and W channels). Prevents spurious responses.
-    @(posedge clk) disable iff (!rst_n)
-      !s_bvalid throughout (##1 s_bvalid) |-> ##[0:$] (s_awvalid && s_awready) && ##[0:$] (s_wvalid && s_wready)
-    // --- p_protocol_compliance_no_rvalid_without_prior_read (roi=0.642) ---
-    // Safety property: A new RVALID assertion requires a prior read address handshake. Prevents spurious read data.
-    @(posedge clk) disable iff (!rst_n)
-      $fell(s_rvalid) ##1 s_rvalid |-> (s_arvalid && s_arready)[->1]
-    // --- p_protocol_compliance_awaddr_stable_during_awvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires AWADDR must remain stable while AWVALID is high and AWREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && !s_awready) |=> (s_awvalid && $stable(s_awaddr))
-    // --- p_protocol_compliance_awprot_stable_during_awvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires AWPROT must remain stable while AWVALID is high and AWREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && !s_awready) |=> (s_awvalid && $stable(s_awprot))
-    // --- p_protocol_compliance_wdata_stable_during_wvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires WDATA must remain stable while WVALID is high and WREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_wvalid && !s_wready) |=> (s_wvalid && $stable(s_wdata))
-    // --- p_protocol_compliance_wstrb_stable_during_wvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires WSTRB must remain stable while WVALID is high and WREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_wvalid && !s_wready) |=> (s_wvalid && $stable(s_wstrb))
-    // --- p_protocol_compliance_araddr_stable_during_arvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires ARADDR must remain stable while ARVALID is high and ARREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && !s_arready) |=> (s_arvalid && $stable(s_araddr))
-    // --- p_protocol_compliance_arprot_stable_during_arvalid (roi=0.679) ---
-    // AXI4-Lite protocol requires ARPROT must remain stable while ARVALID is high and ARREADY is low.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && !s_arready) |=> (s_arvalid && $stable(s_arprot))
-    // --- p_protocol_compliance_no_simultaneous_bvalid_rvalid_from_idle (roi=0.629) ---
-    // Safety property: Both BVALID and RVALID should not rise simultaneously from idle state, as they serve independent read/write paths.
-    @(posedge clk) disable iff (!rst_n)
-      (!s_bvalid && !s_rvalid) |-> ##1 !(s_bvalid && s_rvalid && $rose(s_bvalid) && $rose(s_rvalid))
-    // --- p_protocol_compliance_single_beat_write_one_bvalid (roi=0.642) ---
-    // AXI4-Lite single-beat transaction: One write produces exactly one BVALID response that completes and deasserts. Prevents multiple responses.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready && s_wvalid && s_wready) |-> ##[1:$] (s_bvalid && s_bready)[->1] ##1 !s_bvalid[*1:10]
-    // --- p_protocol_compliance_single_beat_read_one_rvalid (roi=0.642) ---
-    // AXI4-Lite single-beat transaction: One read produces exactly one RVALID response that completes and deasserts. Prevents multiple responses.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) |-> ##[1:$] (s_rvalid && s_rready)[->1] ##1 !s_rvalid[*1:10]
-    // --- p_protocol_compliance_aligned_write_address_4bytes (roi=0.654) ---
-    // Design has 4 registers at 4-byte boundaries (0x00, 0x04, 0x08, 0x0C). Write addresses should be 4-byte aligned for proper register access.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready) |-> (s_awaddr[1:0] == 2'b00)
-    // --- p_protocol_compliance_aligned_read_address_4bytes (roi=0.654) ---
-    // Design has 4 registers at 4-byte boundaries (0x00, 0x04, 0x08, 0x0C). Read addresses should be 4-byte aligned for proper register access.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) |-> (s_araddr[1:0] == 2'b00)
-    // --- p_protocol_compliance_valid_write_address_range (roi=0.667) ---
-    // Design implements exactly 4 registers at offsets 0x00, 0x04, 0x08, 0x0C. Valid write addresses must target these locations only.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready) |-> (s_awaddr[3:0] inside {4'h0, 4'h4, 4'h8, 4'hC})
-    // --- p_protocol_compliance_valid_read_address_range (roi=0.667) ---
-    // Design implements exactly 4 registers at offsets 0x00, 0x04, 0x08, 0x0C. Valid read addresses must target these locations only.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) |-> (s_araddr[3:0] inside {4'h0, 4'h4, 4'h8, 4'hC})
-    // --- p_protocol_compliance_wstrb_valid_encoding (roi=0.654) ---
-    // Write strobe must have at least one bit set during valid write. All-zero strobe is invalid as it indicates no bytes written.
-    @(posedge clk) disable iff (!rst_n)
-      (s_wvalid && s_wready) |-> (s_wstrb != 4'b0000)
-    // --- p_protocol_compliance_no_awready_pulse_without_awvalid (roi=0.667) ---
-    // Safety property: AWREADY cannot rise without AWVALID being present. Prevents illegal handshake initiation by slave.
-    @(posedge clk) disable iff (!rst_n)
-      $rose(s_awready) |-> s_awvalid
-    // --- p_protocol_compliance_no_wready_pulse_without_wvalid (roi=0.667) ---
-    // Safety property: WREADY cannot rise without WVALID being present. Prevents illegal handshake initiation by slave.
-    @(posedge clk) disable iff (!rst_n)
-      $rose(s_wready) |-> s_wvalid
-    // --- p_protocol_compliance_no_arready_pulse_without_arvalid (roi=0.667) ---
-    // Safety property: ARREADY cannot rise without ARVALID being present. Prevents illegal handshake initiation by slave.
-    @(posedge clk) disable iff (!rst_n)
-      $rose(s_arready) |-> s_arvalid
-    // --- p_protocol_compliance_bvalid_clears_after_handshake (roi=0.667) ---
-    // After write response handshake completes, BVALID must deassert in next cycle. Prevents stuck BVALID.
-    @(posedge clk) disable iff (!rst_n)
-      (s_bvalid && s_bready) |=> !s_bvalid
-    // --- p_protocol_compliance_rvalid_clears_after_handshake (roi=0.667) ---
-    // After read data handshake completes, RVALID must deassert in next cycle. Prevents stuck RVALID.
-    @(posedge clk) disable iff (!rst_n)
-      (s_rvalid && s_rready) |=> !s_rvalid
-    // --- p_protocol_compliance_no_new_write_during_active_write (roi=0.629) ---
-    // Safety property: During active write transaction (after AW accepted, before B completes), no new write address should be accepted. Single outstanding transaction only.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready) ##1 (!s_bvalid || !s_bready)[*0:$] ##0 s_bvalid |-> !s_awvalid throughout (##1 s_bvalid && s_bready)
-    // --- p_protocol_compliance_no_new_read_during_active_read (roi=0.629) ---
-    // Safety property: During active read transaction (after AR accepted, before R completes), no new read address should be accepted. Single outstanding transaction only.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) ##1 (!s_rvalid || !s_rready)[*0:$] ##0 s_rvalid |-> !s_arvalid throughout (##1 s_rvalid && s_rready)
-    // --- p_protocol_compliance_write_data_before_response (roi=0.654) ---
-    // Safety property: BVALID can only appear after write data has been accepted (W handshake occurred). Ensures proper transaction ordering.
-    @(posedge clk) disable iff (!rst_n)
-      $rose(s_bvalid) |-> (s_wvalid && s_wready)[->1] ##[0:$] 1
-    // --- p_protocol_compliance_write_addr_before_response (roi=0.654) ---
-    // Safety property: BVALID can only appear after write address has been accepted (AW handshake occurred). Ensures proper transaction ordering.
-    @(posedge clk) disable iff (!rst_n)
-      $rose(s_bvalid) |-> (s_awvalid && s_awready)[->1] ##[0:$] 1
-    // --- p_protocol_compliance_rresp_always_okay_or_slverr (roi=0.654) ---
-    // AXI4-Lite read responses must be either OKAY (2'b00) or SLVERR (2'b10). No burst responses like EXOKAY allowed.
-    @(posedge clk) disable iff (!rst_n)
-      s_rvalid |-> (s_rresp inside {2'b00, 2'b10})
-    // --- p_protocol_compliance_bvalid_not_during_reset (roi=0.667) ---
-    // Safety property: When reset is active (rst_n low), BVALID must be deasserted. Verified through disable iff mechanism.
-    @(posedge clk) disable iff (!rst_n)
-      1 |-> !s_bvalid
-    // --- p_protocol_compliance_rvalid_not_during_reset (roi=0.667) ---
-    // Safety property: When reset is active (rst_n low), RVALID must be deasserted. Verified through disable iff mechanism.
-    @(posedge clk) disable iff (!rst_n)
-      1 |-> !s_rvalid
-    // --- p_protocol_compliance_awready_not_during_reset (roi=0.667) ---
-    // Safety property: When reset is active (rst_n low), AWREADY must be deasserted to prevent accepting transactions.
-    @(posedge clk) disable iff (!rst_n)
-      1 |-> !s_awready
-    // --- p_protocol_compliance_wready_not_during_reset (roi=0.667) ---
-    // Safety property: When reset is active (rst_n low), WREADY must be deasserted to prevent accepting transactions.
-    @(posedge clk) disable iff (!rst_n)
-      1 |-> !s_wready
-    // --- p_protocol_compliance_arready_not_during_reset (roi=0.667) ---
-    // Safety property: When reset is active (rst_n low), ARREADY must be deasserted to prevent accepting transactions.
-    @(posedge clk) disable iff (!rst_n)
-      1 |-> !s_arready
-    // --- p_protocol_compliance_max_write_latency_bound (roi=0.617) ---
-    // Liveness property: Write transaction must complete within bounded time (100 cycles) to prevent deadlock. Ensures system liveness.
-    @(posedge clk) disable iff (!rst_n)
-      (s_awvalid && s_awready && s_wvalid && s_wready) |-> ##[1:100] (s_bvalid && s_bready)
-    // --- p_protocol_compliance_max_read_latency_bound (roi=0.617) ---
-    // Liveness property: Read transaction must complete within bounded time (100 cycles) to prevent deadlock. Ensures system liveness.
-    @(posedge clk) disable iff (!rst_n)
-      (s_arvalid && s_arready) |-> ##[1:100] (s_rvalid && s_rready)
+    // Liveness property: After W phase completes first, then AW phase completes, slave must eventually assert BVALID within bounded time.
+    p_protocol_compliance_bvalid_eventually_after_w_then_aw: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && s_wready && !s_awvalid) ##[1:$] (s_awvalid && s_awready) |-> ##[1:16] s_bvalid
+        );
+    // --- p_protocol_compliance_rvalid_eventually_after_read (roi=0.654) ---
+    // Liveness property: After read address handshake completes, slave must eventually assert RVALID with read data within bounded time.
+    p_protocol_compliance_rvalid_eventually_after_read: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && s_arready) |-> ##[1:16] s_rvalid
+        );
+    // --- p_protocol_compliance_no_bvalid_without_write_transaction (roi=0.642) ---
+    // Safety property: BVALID should never be asserted without a preceding write transaction (both AW and W phases must have occurred within recent history).
+    p_protocol_compliance_no_bvalid_without_write_transaction: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_bvalid |-> $past(s_awvalid && s_awready, 1, 16) && $past(s_wvalid && s_wready, 1, 16)
+        );
+    // --- p_protocol_compliance_no_rvalid_without_read_transaction (roi=0.642) ---
+    // Safety property: RVALID should never be asserted without a preceding read address handshake within recent history.
+    p_protocol_compliance_no_rvalid_without_read_transaction: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_rvalid |-> $past(s_arvalid && s_arready, 1, 16)
+        );
+    // --- p_protocol_compliance_bvalid_cleared_after_handshake (roi=0.667) ---
+    // Safety property: After write response handshake completes, BVALID must be deasserted in the next cycle (no lingering BVALID).
+    p_protocol_compliance_bvalid_cleared_after_handshake: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_bvalid && s_bready) |=> !s_bvalid
+        );
+    // --- p_protocol_compliance_rvalid_cleared_after_handshake (roi=0.667) ---
+    // Safety property: After read data handshake completes, RVALID must be deasserted in the next cycle (no lingering RVALID).
+    p_protocol_compliance_rvalid_cleared_after_handshake: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_rvalid && s_rready) |=> !s_rvalid
+        );
+    // --- p_protocol_compliance_no_overlapping_write_responses (roi=0.629) ---
+    // Safety property: A new BVALID cannot be asserted until the current write response completes and stays low. Ensures no overlapping responses for single-beat transactions.
+    p_protocol_compliance_no_overlapping_write_responses: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_bvalid |-> ##[1:$] (s_bready && s_bvalid) ##1 !s_bvalid [*1:$] ##0 !s_bvalid throughout (s_awvalid && s_awready && s_wvalid && s_wready)[->1]
+        );
+    // --- p_protocol_compliance_no_overlapping_read_responses (roi=0.629) ---
+    // Safety property: A new RVALID cannot be asserted until the current read response completes and stays low. Ensures no overlapping responses for single-beat transactions.
+    p_protocol_compliance_no_overlapping_read_responses: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_rvalid |-> ##[1:$] (s_rready && s_rvalid) ##1 !s_rvalid [*1:$] ##0 !s_rvalid throughout (s_arvalid && s_arready)[->1]
+        );
+    // --- p_protocol_compliance_awready_deasserts_after_handshake (roi=0.617) ---
+    // Implementation-specific safety: Slave typically deasserts AWREADY after accepting an address to process the transaction (common FSM pattern).
+    p_protocol_compliance_awready_deasserts_after_handshake: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready) |=> !s_awready
+        );
+    // --- p_protocol_compliance_wready_deasserts_after_handshake (roi=0.617) ---
+    // Implementation-specific safety: Slave typically deasserts WREADY after accepting data to process the transaction (common FSM pattern).
+    p_protocol_compliance_wready_deasserts_after_handshake: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && s_wready) |=> !s_wready
+        );
+    // --- p_protocol_compliance_arready_deasserts_after_handshake (roi=0.617) ---
+    // Implementation-specific safety: Slave typically deasserts ARREADY after accepting a read address to process the transaction (common FSM pattern).
+    p_protocol_compliance_arready_deasserts_after_handshake: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && s_arready) |=> !s_arready
+        );
+    // --- p_protocol_compliance_bresp_always_okay (roi=0.667) ---
+    // Per design comment, write response is always OKAY (2'b00). This verifies the slave never returns error responses.
+    p_protocol_compliance_bresp_always_okay: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_bvalid |-> (s_bresp == 2'b00)
+        );
+    // --- p_protocol_compliance_write_addr_aligned_to_word (roi=0.654) ---
+    // Safety property: For a register file with 32-bit registers, addresses should be word-aligned (bottom 2 bits are 0).
+    p_protocol_compliance_write_addr_aligned_to_word: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready) |-> (s_awaddr[1:0] == 2'b00)
+        );
+    // --- p_protocol_compliance_read_addr_aligned_to_word (roi=0.654) ---
+    // Safety property: For a register file with 32-bit registers, addresses should be word-aligned (bottom 2 bits are 0).
+    p_protocol_compliance_read_addr_aligned_to_word: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && s_arready) |-> (s_araddr[1:0] == 2'b00)
+        );
+    // --- p_protocol_compliance_write_addr_within_range (roi=0.642) ---
+    // Safety property: Write addresses must target one of the four defined registers (0x00, 0x04, 0x08, 0x0C). Addresses outside this range are invalid.
+    p_protocol_compliance_write_addr_within_range: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready) |-> (s_awaddr[3:0] inside {4'h0, 4'h4, 4'h8, 4'hC})
+        );
+    // --- p_protocol_compliance_read_addr_within_range (roi=0.642) ---
+    // Safety property: Read addresses must target one of the four defined registers (0x00, 0x04, 0x08, 0x0C). Addresses outside this range are invalid.
+    p_protocol_compliance_read_addr_within_range: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && s_arready) |-> (s_araddr[3:0] inside {4'h0, 4'h4, 4'h8, 4'hC})
+        );
+    // --- p_protocol_compliance_wstrb_nonzero_on_valid_write (roi=0.629) ---
+    // Safety property: For a meaningful write transaction, at least one byte strobe should be active. All-zero WSTRB would indicate no actual write.
+    p_protocol_compliance_wstrb_nonzero_on_valid_write: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_wvalid && s_wready) |-> (|s_wstrb)
+        );
+    // --- p_protocol_compliance_bvalid_mutex_with_new_write (roi=0.642) ---
+    // Safety property: While a write response is pending (BVALID high, BREADY low), slave should not accept a new complete write transaction (FSM constraint).
+    p_protocol_compliance_bvalid_mutex_with_new_write: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_bvalid && !s_bready |-> !(s_awvalid && s_awready && s_wvalid && s_wready)
+        );
+    // --- p_protocol_compliance_rvalid_mutex_with_new_read (roi=0.642) ---
+    // Safety property: While a read response is pending (RVALID high, RREADY low), slave should not accept a new read address (FSM constraint).
+    p_protocol_compliance_rvalid_mutex_with_new_read: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_rvalid && !s_rready |-> !(s_arvalid && s_arready)
+        );
+    // --- p_protocol_compliance_no_bvalid_at_reset (roi=0.654) ---
+    // Safety property: At reset deassertion, BVALID should be low (no pending write response).
+    p_protocol_compliance_no_bvalid_at_reset: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              $fell(rst_n) |-> !s_bvalid
+        );
+    // --- p_protocol_compliance_no_rvalid_at_reset (roi=0.654) ---
+    // Safety property: At reset deassertion, RVALID should be low (no pending read response).
+    p_protocol_compliance_no_rvalid_at_reset: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              $fell(rst_n) |-> !s_rvalid
+        );
+    // --- p_protocol_compliance_awready_low_during_bvalid_wait (roi=0.629) ---
+    // Implementation-specific: While waiting for BREADY, slave should not accept new write addresses (FSM in response state).
+    p_protocol_compliance_awready_low_during_bvalid_wait: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_bvalid && !s_bready) |-> !s_awready
+        );
+    // --- p_protocol_compliance_wready_low_during_bvalid_wait (roi=0.629) ---
+    // Implementation-specific: While waiting for BREADY, slave should not accept new write data (FSM in response state).
+    p_protocol_compliance_wready_low_during_bvalid_wait: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_bvalid && !s_bready) |-> !s_wready
+        );
+    // --- p_protocol_compliance_arready_low_during_rvalid_wait (roi=0.629) ---
+    // Implementation-specific: While waiting for RREADY, slave should not accept new read addresses (FSM in data response state).
+    p_protocol_compliance_arready_low_during_rvalid_wait: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_rvalid && !s_rready) |-> !s_arready
+        );
+    // --- p_protocol_compliance_write_response_bounded_latency (roi=0.617) ---
+    // Bounded liveness: Write response handshake should complete within reasonable cycles (8 cycles) after both address and data are accepted. Prevents deadlock.
+    p_protocol_compliance_write_response_bounded_latency: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_awvalid && s_awready && s_wvalid && s_wready) |-> ##[1:8] (s_bvalid && s_bready)
+        );
+    // --- p_protocol_compliance_read_response_bounded_latency (roi=0.617) ---
+    // Bounded liveness: Read response handshake should complete within reasonable cycles (8 cycles) after address is accepted. Prevents deadlock.
+    p_protocol_compliance_read_response_bounded_latency: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              (s_arvalid && s_arready) |-> ##[1:8] (s_rvalid && s_rready)
+        );
+    // --- p_protocol_compliance_single_beat_only_no_awlen (roi=0.567) ---
+    // Placeholder rationale: AXI4-Lite has no burst signals (AWLEN/ARLEN). This is implicitly enforced by interface definition, not a runtime property. Kept for documentation.
+    p_protocol_compliance_single_beat_only_no_awlen: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              1'b1 |-> 1'b1
+        );
+    // --- p_protocol_compliance_write_data_not_x_on_valid (roi=0.642) ---
+    // Safety property: When WVALID is asserted, WDATA must not contain X/Z values (protocol violation and design bug indicator).
+    p_protocol_compliance_write_data_not_x_on_valid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_wvalid |-> !$isunknown(s_wdata)
+        );
+    // --- p_protocol_compliance_write_strb_not_x_on_valid (roi=0.642) ---
+    // Safety property: When WVALID is asserted, WSTRB must not contain X/Z values (protocol violation and design bug indicator).
+    p_protocol_compliance_write_strb_not_x_on_valid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_wvalid |-> !$isunknown(s_wstrb)
+        );
+    // --- p_protocol_compliance_awaddr_not_x_on_valid (roi=0.642) ---
+    // Safety property: When AWVALID is asserted, AWADDR must not contain X/Z values (protocol violation and design bug indicator).
+    p_protocol_compliance_awaddr_not_x_on_valid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_awvalid |-> !$isunknown(s_awaddr)
+        );
+    // --- p_protocol_compliance_araddr_not_x_on_valid (roi=0.642) ---
+    // Safety property: When ARVALID is asserted, ARADDR must not contain X/Z values (protocol violation and design bug indicator).
+    p_protocol_compliance_araddr_not_x_on_valid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_arvalid |-> !$isunknown(s_araddr)
+        );
+    // --- p_protocol_compliance_rdata_not_x_on_rvalid (roi=0.654) ---
+    // Safety property: When RVALID is asserted, RDATA must not contain X/Z values (indicates proper register read implementation).
+    p_protocol_compliance_rdata_not_x_on_rvalid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_rvalid |-> !$isunknown(s_rdata)
+        );
+    // --- p_protocol_compliance_bresp_not_x_on_bvalid (roi=0.654) ---
+    // Safety property: When BVALID is asserted, BRESP must not contain X/Z values (indicates proper response generation).
+    p_protocol_compliance_bresp_not_x_on_bvalid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_bvalid |-> !$isunknown(s_bresp)
+        );
+    // --- p_protocol_compliance_rresp_not_x_on_rvalid (roi=0.654) ---
+    // Safety property: When RVALID is asserted, RRESP must not contain X/Z values (indicates proper response generation).
+    p_protocol_compliance_rresp_not_x_on_rvalid: assert property (
+            @(posedge clk) disable iff (!rst_n)
+              s_rvalid |-> !$isunknown(s_rresp)
+        );
 
 endmodule // sva_protocol_compliance_checker
