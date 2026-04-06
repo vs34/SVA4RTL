@@ -120,24 +120,24 @@ INFO (IPF057): 0.0.PRE: The property "axi_lite_slave.u_sva_protocol_compliance_c
 0: Found proofs for 10 properties in preprocessing
 0: Using multistage preprocessing
 0: Starting reduce
-0: Finished reduce in 0.002s
+0: Finished reduce in 0.003s
 0.0.PRE: Performing Proof Simplification...
 0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.Ht: Proof Simplification Iteration 1	[0.00 s]
 0.0.Ht: Proof Simplification Iteration 2	[0.00 s]
 0.0.Ht: Proof Simplification Iteration 3	[0.00 s]
-0.0.Ht: Proof Simplification Iteration 4	[0.01 s]
+0.0.Ht: Proof Simplification Iteration 4	[0.00 s]
 0.0.Ht: Proof Simplification Iteration 5	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 6	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 7	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 8	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 9	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 10	[0.01 s]
-0.0.Ht: Proof Simplification Iteration 11	[0.02 s]
-0.0.Ht: Proof Simplification Iteration 12	[0.02 s]
-0.0.Ht: Proof Simplification Iteration 13	[0.02 s]
-0.0.Ht: Proof Simplification Iteration 14	[0.02 s]
-0.0.Ht: Proof Simplification Iteration 15	[0.02 s]
+0.0.Ht: Proof Simplification Iteration 11	[0.01 s]
+0.0.Ht: Proof Simplification Iteration 12	[0.01 s]
+0.0.Ht: Proof Simplification Iteration 13	[0.01 s]
+0.0.Ht: Proof Simplification Iteration 14	[0.01 s]
+0.0.Ht: Proof Simplification Iteration 15	[0.01 s]
 0.0.Ht: Proof Simplification Iteration 16	[0.02 s]
 0.0.Ht: Proof Simplification Iteration 17	[0.02 s]
 0.0.Ht: Proof Simplification Iteration 18	[0.02 s]
@@ -170,14 +170,14 @@ use check_assumptions -show -live to show this property in the property table
 INFO (IPF057): 0.0.PRE: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_stable_until_rready" was proven in 0.00 s.
 0.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF057): 0.0.PRE: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_bounded_latency" was proven in 0.00 s.
-0.0.PRE: Proof Simplification completed in 0.05 s
+0.0.PRE: Proof Simplification completed in 0.07 s
 0.0.Ht: Identified and disabled 21 duplicated targets.
 0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 1
 0: ProofGrid is starting event handling
-0.0.Hp: Proofgrid shell started at 43751@edatools-server2.iiitd.edu.in(local) jg_43612_edatools-server2.iiitd.edu.in_1
-0.0.Ht: Proofgrid shell started at 43750@edatools-server2.iiitd.edu.in(local) jg_43612_edatools-server2.iiitd.edu.in_1
+0.0.Hp: Proofgrid shell started at 43194@edatools-server2.iiitd.edu.in(local) jg_43029_edatools-server2.iiitd.edu.in_1
+0.0.Ht: Proofgrid shell started at 43190@edatools-server2.iiitd.edu.in(local) jg_43029_edatools-server2.iiitd.edu.in_1
 0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.Hp: Lemmas used(1): ?2
@@ -187,25 +187,25 @@ INFO (IPF051): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_complia
 INFO (IPF051): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_bounded_latency:precondition1" was proven unreachable in 0.01 s.
 0.0.Hp: Trace Attempt  1	[0.01 s]
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_follows_read_transaction:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_awaddr_when_valid:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wdata_when_valid:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_araddr_when_valid:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check" in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check" in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_bounded_latency:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_eventually_asserts:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wstrb_when_valid:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_eventually_asserts:precondition1" was covered in 1 cycles in 0.02 s.
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_eventually_asserts:precondition1" was covered in 1 cycles in 0.02 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_follows_read_transaction:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_awaddr_when_valid:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wdata_when_valid:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_araddr_when_valid:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check" in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check" in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_bounded_latency:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_eventually_asserts:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wstrb_when_valid:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_eventually_asserts:precondition1" was covered in 1 cycles in 0.03 s.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_eventually_asserts:precondition1" was covered in 1 cycles in 0.03 s.
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
 INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_no_depend_on_bready:precondition1" was covered in 1 cycles in 0.04 s.
 INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_no_depend_on_bready:precondition1" was covered in 1 cycles in 0.04 s.
@@ -214,28 +214,28 @@ INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_complia
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
 INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_write_channel_independence:precondition1" was covered in 1 cycles in 0.04 s.
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid" in 0.04 s.
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid" in 0.05 s.
 0: ProofGrid is temporarily paused because there are too many pending traces.
 0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
-INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle:precondition1" was covered in 1 cycles in 0.04 s.
-0: ProofGrid is temporarily paused because there are too many pending traces.
-0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle:precondition1" was covered in 1 cycles in 0.05 s.
 0.0.Hp: A trace with 1 cycles was found. [0.01 s]
 INFO (IPF047): 0.0.Hp: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_when_idle:precondition1" was covered in 1 cycles in 0.05 s.
 0.0.Ht: Trace Attempt  1	[0.01 s]
 0.0.Ht: Trace Attempt  2	[0.01 s]
 0.0.Ht: A trace with 2 cycles was found. [0.01 s]
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready:precondition1" was covered in 2 cycles in 0.05 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_awready_then_wready:precondition1" was covered in 2 cycles in 0.05 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready:precondition1" was covered in 2 cycles in 0.05 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready:precondition1" was covered in 2 cycles in 0.05 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready:precondition1" was covered in 2 cycles in 0.04 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok" in 0.04 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready:precondition1" was covered in 2 cycles in 0.04 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready:precondition1" was covered in 2 cycles in 0.04 s.
 0.0.Ht: A trace with 2 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready" in 0.05 s.
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready" in 0.05 s.
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok" in 0.05 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready" in 0.04 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
 0.0.Ht: A trace with 2 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready" in 0.05 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready" in 0.06 s.
+0.0.Ht: A trace with 2 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready" in 0.06 s.
 0.0.Ht: A trace with 2 cycles was found. [0.01 s]
 INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arvalid_stable_until_arready:precondition1" was covered in 2 cycles in 0.06 s.
 INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_not_before_arready:precondition1" was covered in 2 cycles in 0.06 s.
@@ -246,73 +246,80 @@ INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_complia
 INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rdata_when_valid:precondition1" was covered in 2 cycles in 0.06 s.
 INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rresp_when_valid:precondition1" was covered in 2 cycles in 0.06 s.
 0.0.Ht: A trace with 2 cycles was found. [0.01 s]
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_stable_until_rready:precondition1" was covered in 2 cycles in 0.06 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready:precondition1" was covered in 2 cycles in 0.06 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rresp_stable_until_rready:precondition1" was covered in 2 cycles in 0.06 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_stable_until_rready:precondition1" was covered in 2 cycles in 0.07 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready:precondition1" was covered in 2 cycles in 0.07 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rresp_stable_until_rready:precondition1" was covered in 2 cycles in 0.07 s.
+0.0.Ht: A trace with 2 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_awready_then_wready:precondition1" was covered in 2 cycles in 0.08 s.
 0.0.Ht: Trace Attempt  3	[0.01 s]
 0: ProofGrid is temporarily paused because there are too many pending traces.
 0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
 0.0.Ht: A trace with 3 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready" in 0.06 s.
-0.0.Ht: A trace with 3 cycles was found. [0.01 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready" in 0.06 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready" in 0.08 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
 0.0.Ht: A trace with 3 cycles was found. [0.05 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready" in 0.06 s.
-0.0.Ht: A trace with 3 cycles was found. [0.05 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arvalid_stable_until_arready" in 0.06 s.
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_not_before_arready" in 0.06 s.
-0.0.Ht: A trace with 3 cycles was found. [0.05 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_araddr_stable_until_arready" in 0.06 s.
-0.0.Ht: A trace with 3 cycles was found. [0.05 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arprot_stable_until_arready" in 0.06 s.
-0.0.Ht: A trace with 3 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_no_depend_on_bready" in 0.07 s.
-0.0.Ht: Trace Attempt  4	[0.06 s]
-0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready:precondition1" was covered in 4 cycles in 0.07 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w:precondition1" was covered in 4 cycles in 0.07 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_stable_until_bready:precondition1" was covered in 4 cycles in 0.07 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_always_okay:precondition1" was covered in 4 cycles in 0.07 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_bresp_when_valid:precondition1" was covered in 4 cycles in 0.07 s.
-0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w" in 0.08 s.
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid:precondition1" was covered in 4 cycles in 0.08 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready" in 0.08 s.
 0.0.Hp: Lemmas used(2): ?2
 0.0.Hp: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready" was proven in 0.09 s.
+INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready" was proven in 0.10 s.
 0.0.Hp: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready" was proven in 0.09 s.
+INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready" was proven in 0.10 s.
 0.0.Hp: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready" was proven in 0.09 s.
+INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready" was proven in 0.10 s.
 0.0.Hp: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_clears_on_rready" was proven in 0.09 s.
+INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_clears_on_rready" was proven in 0.10 s.
 0.0.Hp: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_without_prior_arvalid" was proven in 0.09 s.
+INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_without_prior_arvalid" was proven in 0.10 s.
 0.0.Hp: Trace Attempt  2	[0.03 s]
-0.0.Hp: Trace Attempt  3	[0.05 s]
-0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready:precondition1" was covered in 4 cycles in 0.08 s.
-0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_no_depend_on_bready" in 0.08 s.
+0.0.Ht: A trace with 3 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready" in 0.09 s.
+0.0.Ht: A trace with 3 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arvalid_stable_until_arready" in 0.09 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_not_before_arready" in 0.09 s.
+0.0.Ht: A trace with 3 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_araddr_stable_until_arready" in 0.09 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arprot_stable_until_arready" in 0.09 s.
+0.0.Ht: A trace with 3 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_no_depend_on_bready" in 0.09 s.
+0.0.Ht: Trace Attempt  4	[0.05 s]
+0.0.Ht: A trace with 4 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready:precondition1" was covered in 4 cycles in 0.09 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w:precondition1" was covered in 4 cycles in 0.09 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_stable_until_bready:precondition1" was covered in 4 cycles in 0.09 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_always_okay:precondition1" was covered in 4 cycles in 0.09 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_bresp_when_valid:precondition1" was covered in 4 cycles in 0.09 s.
+0.0.Ht: A trace with 4 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w" in 0.10 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid:precondition1" was covered in 4 cycles in 0.10 s.
 0: ProofGrid is temporarily paused because there are too many pending traces.
 0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
 0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_no_depend_on_rready" in 0.08 s.
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready:precondition1" was covered in 4 cycles in 0.10 s.
 0.0.Ht: A trace with 4 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_when_idle" in 0.08 s.
-0.0.Ht: Trace Attempt  5	[0.06 s]
-0.0.Ht: A trace with 5 cycles was found. [0.06 s]
-INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_wready_then_awready:precondition1" was covered in 5 cycles in 0.08 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_no_depend_on_bready" in 0.10 s.
 0: ProofGrid is temporarily paused because there are too many pending traces.
 0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
-0.0.Ht: A trace with 5 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 5 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle" in 0.09 s.
-0.0.Ht: Trace Attempt  6	[0.06 s]
-0.0.Ht: A trace with 6 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 6 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence" in 0.09 s.
-0.0.Ht: Trace Attempt  7	[0.06 s]
-0.0.Ht: A trace with 7 cycles was found. [0.06 s]
-INFO (IPF055): 0.0.Ht: A counterexample (cex) with 7 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid" in 0.09 s.
+0.0.Ht: A trace with 4 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_no_depend_on_rready" in 0.10 s.
+0.0.Ht: A trace with 4 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_when_idle" in 0.10 s.
+0.0.Ht: Trace Attempt  5	[0.09 s]
+0.0.Ht: A trace with 5 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Ht: The cover property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_wready_then_awready:precondition1" was covered in 5 cycles in 0.11 s.
+0.0.Ht: A trace with 5 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 5 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle" in 0.11 s.
+0.0.Ht: Trace Attempt  6	[0.09 s]
+0.0.Ht: A trace with 6 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 6 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence" in 0.11 s.
+0.0.Ht: Trace Attempt  7	[0.09 s]
+0.0.Ht: A trace with 7 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 7 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid" in 0.11 s.
+0.0.Hp: Trace Attempt  3	[0.06 s]
+0.0.Hp: Trace Attempt  4	[0.08 s]
 0.0.Ht: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.Ht: Trace Attempt  1	[0.00 s]
 0.0.Ht: Trace Attempt  2	[0.00 s]
@@ -346,9 +353,9 @@ INFO (IPF069): 0.0.Ht: A counterexample (cex) with 5+1 cycles was found for the 
 0.0.Ht: A trace with 2+1 cycles was found (stem + loop). [0.00 s]
 INFO (IPF069): 0.0.Ht: A counterexample (cex) with 2+1 cycles was found for the property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_write_channel_independence" in 0.00 s (stem + loop).
 0.0.Ht: Reached length limit (20) [0.04 s]
-0.0.Ht: Exited with Success (@ 0.11 s)
+0.0.Hp: Trace Attempt  5	[0.11 s]
+0.0.Ht: Exited with Success (@ 0.12 s)
 0.0.Ht: Completed, Restart ignored.
-0.0.Hp: Trace Attempt  4	[0.09 s]
 0.0.Hp: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.Hp: Trace Attempt  1	[0.00 s]
 0.0.Hp: Trace Attempt  2	[0.00 s]
@@ -364,7 +371,7 @@ INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_ch
 0.0.Hp: Trace Attempt  3	[0.00 s]
 0.0.Hp: Trace Attempt  4	[0.00 s]
 0.0.Hp: Trace Attempt  5	[0.00 s]
-0.0.Hp: Trace Attempt 20	[0.06 s]
+0.0.Hp: Trace Attempt 20	[0.07 s]
 0.0.Hp: Trace Attempt  1	[0.00 s]
 0.0.Hp: Trace Attempt  2	[0.00 s]
 0.0.Hp: Trace Attempt  3	[0.00 s]
@@ -374,8 +381,8 @@ INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_ch
 0.0.Hp: Trace Attempt 10	[0.01 s]
 0.0.Hp: A proof was found: No trace exists. [0.01 s]
 INFO (IPF057): 0.0.Hp: The property "axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_follows_read_transaction" was proven in 0.01 s.
-0.0.Hp: Reached length limit (20) [0.22 s]
-0.0.Hp: Exited with Success (@ 0.24 s)
+0.0.Hp: Reached length limit (20) [0.24 s]
+0.0.Hp: Exited with Success (@ 0.26 s)
 0.0.Hp: Completed, Restart ignored.
 0: ProofGrid usable level: 0
 0: --------------------------------------------------------------
@@ -388,12 +395,12 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-     Ht        0.08        0.10        0.00       56.14 %
-     Hp        0.07        0.24        0.00       78.08 %
-    all        0.07        0.17        0.00       69.82 %
+     Ht        0.09        0.12        0.00       56.19 %
+     Hp        0.08        0.26        0.00       76.47 %
+    all        0.09        0.19        0.00       68.65 %
 
-    Data read    : 213.10 kiB
-    Data written : 3.99 kiB
+    Data read    : 243.52 kiB
+    Data written : 3.64 kiB
 
 0: All pending notifications were processed.
 No trace exists within specified max_length (20).
@@ -425,9 +432,11 @@ max_trace_length
 [<embedded>] % 
 [<embedded>] % # Report results
 [<embedded>] % report -results -file jasper_results.log
-[<embedded>] % 
-[<embedded>] % exit
+ERROR (EFL012): Unable to save the script in file "/home/vaibhav22555/Desktop/SVA4RTL/input/jasper_results.log". The file already exists. Consider the "-force" option.
+
+ERROR: problem encountered at line 25 in file run_jasper.tcl
+
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
 INFO: Proof threads stopped.
-STATUS: PASS
+STATUS: FAIL
