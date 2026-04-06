@@ -1,0 +1,116 @@
+
+==============================================================
+    JasperGold Verification Results
+==============================================================
+    2019.09p002 64 bits for Linux64 2.6.32-431.11.2.el6.x86_64
+    Host Name: localhost
+    User Name: vaibhav22555
+    Printed on: Monday, Apr 6, 2026 09:41:55 PM IST
+    Working Directory: /home/vaibhav22555/Desktop/SVA4RTL/input
+
+
+==============================================================
+RESULTS
+==============================================================
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       Name                                                                                                                        |    Result    |  Engine  |  Bound  |  Time    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[1]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready                               cex             Ht            3    0.058 s      
+[2]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awvalid_stable_until_awready:precondition1                 covered         Ht            2    0.048 s      
+[3]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready                                cex             Ht            3    0.059 s      
+[4]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awaddr_stable_until_awready:precondition1                  covered         Ht            2    0.048 s      
+[5]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready                                cex             Ht            3    0.059 s      
+[6]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awprot_stable_until_awready:precondition1                  covered         Ht            2    0.048 s      
+[7]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready                                 cex             Ht            2    0.051 s      
+[8]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wvalid_stable_until_wready:precondition1                   covered         Hp            1    0.025 s      
+[9]   axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready                                  cex             Ht            2    0.053 s      
+[10]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wdata_stable_until_wready:precondition1                    covered         Hp            1    0.025 s      
+[11]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready                                  cex             Ht            2    0.051 s      
+[12]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_stable_until_wready:precondition1                    covered         Hp            1    0.025 s      
+[13]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready                                 proven          Hp     Infinite    0.086 s      
+[14]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_stable_until_bready:precondition1                   covered         Ht            4    0.073 s      
+[15]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_stable_until_bready                                  proven          PRE    Infinite    0.000 s      
+[16]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_stable_until_bready:precondition1                    covered         Ht            4    0.073 s      
+[17]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arvalid_stable_until_arready                               cex             Ht            3    0.060 s      
+[18]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arvalid_stable_until_arready:precondition1                 covered         Ht            2    0.055 s      
+[19]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_araddr_stable_until_arready                                cex             Ht            3    0.060 s      
+[20]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_araddr_stable_until_arready:precondition1                  covered         Ht            2    0.055 s      
+[21]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arprot_stable_until_arready                                cex             Ht            3    0.061 s      
+[22]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arprot_stable_until_arready:precondition1                  covered         Ht            2    0.055 s      
+[23]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_stable_until_rready                                 proven          PRE    Infinite    0.000 s      
+[24]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_stable_until_rready:precondition1                   covered         Ht            2    0.057 s      
+[25]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready                                  proven          Hp     Infinite    0.086 s      
+[26]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rdata_stable_until_rready:precondition1                    covered         Ht            2    0.057 s      
+[27]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rresp_stable_until_rready                                  proven          PRE    Infinite    0.000 s      
+[28]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rresp_stable_until_rready:precondition1                    covered         Ht            2    0.057 s      
+[29]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_write_transaction                           proven          Hp         (17)    0.023 s      
+[30]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_write_transaction:precondition1             unreachable     Hp     Infinite    0.009 s      
+[31]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_awready_then_wready                         undetermined    Hp         (21)    0.090 s      
+[32]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_awready_then_wready:precondition1           covered         Ht            2    0.048 s      
+[33]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_wready_then_awready                         cex             Ht        5 + 1    0.001 s      
+[34]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_follows_wready_then_awready:precondition1           covered         Ht            5    0.079 s      
+[35]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_follows_read_transaction                            proven          Hp         (11)    0.010 s      
+[36]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_follows_read_transaction:precondition1              covered         Hp            1    0.025 s      
+[37]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w                                 cex             Ht            4    0.075 s      
+[38]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_not_before_aw_and_w:precondition1                   covered         Ht            4    0.073 s      
+[39]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_not_before_arready                                  cex             Ht            3    0.060 s      
+[40]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_not_before_arready:precondition1                    covered         Ht            2    0.055 s      
+[41]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready                                    proven          Hp     Infinite    0.086 s      
+[42]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_clears_on_bready:precondition1                      covered         Ht            4    0.077 s      
+[43]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_clears_on_rready                                    proven          Hp     Infinite    0.086 s      
+[44]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_clears_on_rready:precondition1                      covered         Ht            2    0.055 s      
+[45]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid                            cex             Ht            7    0.094 s      
+[46]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_without_prior_awvalid:precondition1              covered         Ht            4    0.075 s      
+[47]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_without_prior_arvalid                            proven          Hp     Infinite    0.086 s      
+[48]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_without_prior_arvalid:precondition1              covered         Ht            2    0.055 s      
+[49]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_no_depend_on_bready                                cex             Ht            4    0.077 s      
+[50]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_no_depend_on_bready:precondition1                  covered         Hp            1    0.040 s      
+[51]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_no_depend_on_bready                                 cex             Ht            3    0.071 s      
+[52]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_no_depend_on_bready:precondition1                   covered         Hp            1    0.040 s      
+[53]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_no_depend_on_rready                                cex             Ht            4    0.078 s      
+[54]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_no_depend_on_rready:precondition1                  covered         Hp            1    0.041 s      
+[55]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_write_channel_independence                                 cex             Ht        2 + 1    0.000 s      
+[56]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_write_channel_independence:precondition1                   covered         Hp            1    0.042 s      
+[57]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence                            cex             Ht            6    0.093 s      
+[58]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_write_channel_independence:precondition1              covered         Hp            1    0.025 s      
+[59]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_always_okay                                          proven          PRE    Infinite    0.000 s      
+[60]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bresp_always_okay:precondition1                            covered         Ht            4    0.073 s      
+[61]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_awaddr_when_valid                                  proven          PRE    Infinite    0.000 s      
+[62]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_awaddr_when_valid:precondition1                    covered         Hp            1    0.025 s      
+[63]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wdata_when_valid                                   proven          PRE    Infinite    0.000 s      
+[64]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wdata_when_valid:precondition1                     covered         Hp            1    0.025 s      
+[65]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wstrb_when_valid                                   proven          PRE    Infinite    0.000 s      
+[66]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_wstrb_when_valid:precondition1                     covered         Hp            1    0.025 s      
+[67]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_araddr_when_valid                                  proven          PRE    Infinite    0.000 s      
+[68]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_araddr_when_valid:precondition1                    covered         Hp            1    0.025 s      
+[69]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rdata_when_valid                                   proven          PRE    Infinite    0.000 s      
+[70]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rdata_when_valid:precondition1                     covered         Ht            2    0.055 s      
+[71]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_bresp_when_valid                                   proven          PRE    Infinite    0.000 s      
+[72]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_bresp_when_valid:precondition1                     covered         Ht            4    0.073 s      
+[73]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rresp_when_valid                                   proven          PRE    Infinite    0.000 s      
+[74]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_x_on_rresp_when_valid:precondition1                     covered         Ht            2    0.055 s      
+[75]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid                                  cex             Hp            1    0.042 s      
+[76]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wstrb_nonzero_when_wvalid:precondition1                    covered         Hp            1    0.025 s      
+[77]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_bounded_latency                                     undetermined    Ht        21 -     0.094 s      
+[78]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_bvalid_bounded_latency:precondition1                       unreachable     Hp     Infinite    0.010 s      
+[79]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_bounded_latency                                     proven          PRE    Infinite    0.000 s      
+[80]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_rvalid_bounded_latency:precondition1                       covered         Hp            1    0.025 s      
+[81]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_eventually_asserts                                 undetermined    Ht        21 -     0.094 s      
+[82]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_eventually_asserts:precondition1                   covered         Hp            1    0.025 s      
+[83]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_eventually_asserts                                  undetermined    Ht        21 -     0.094 s      
+[84]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_wready_eventually_asserts:precondition1                    covered         Hp            1    0.025 s      
+[85]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_eventually_asserts                                 undetermined    Ht        21 -     0.094 s      
+[86]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_arready_eventually_asserts:precondition1                   covered         Hp            1    0.025 s      
+[87]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle                                        cex             Ht            5    0.092 s      
+[88]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_bvalid_when_idle:precondition1                          covered         Hp            1    0.043 s      
+[89]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_when_idle                                        cex             Ht            4    0.078 s      
+[90]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_no_rvalid_when_idle:precondition1                          covered         Hp            1    0.047 s      
+[91]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok                             cex             Ht            2    0.051 s      
+[92]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_awready_wready_simultaneous_ok:precondition1               covered         Hp            1    0.025 s      
+[93]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check                                    cex             Hp            1    0.025 s      
+[94]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_address_alignment_check:precondition1                      covered         Hp            1    0.025 s      
+[95]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check                               cex             Hp            1    0.025 s      
+[96]  axi_lite_slave.u_sva_protocol_compliance_checker.p_protocol_compliance_read_address_alignment_check:precondition1                 covered         Hp            1    0.025 s      
