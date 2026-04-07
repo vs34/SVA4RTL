@@ -48,49 +48,26 @@ INFO (IPF121): Cleared environment completely for new design analysis.
 [-- (VERI-1482)] Analyzing Verilog file 'axi_lite_slave.sv'
 % analyze -sv sva_protocol_compliance_checker.sv
 [-- (VERI-1482)] Analyzing Verilog file 'sva_protocol_compliance_checker.sv'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(38): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(44): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(50): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(56): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(62): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(68): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(74): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(80): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(86): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(92): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(98): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(104): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(110): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(116): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(122): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(128): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(134): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(140): syntax error near ';'
-[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(146): syntax error near ';'
-[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+% analyze -sv bind_axi_lite_slave.sv
+[-- (VERI-1482)] Analyzing Verilog file 'bind_axi_lite_slave.sv'
+% 
+% elaborate -top axi_lite_slave
+INFO (ISW003): Top module name is "axi_lite_slave".
+[INFO (HIER-8002)] axi_lite_slave.sv(162): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] axi_lite_slave.sv(5): compiling module 'axi_lite_slave'
+[INFO (VERI-1018)] sva_protocol_compliance_checker.sv(7): compiling module 'sva_protocol_compliance_checker:(ADDR_WIDTH=32'b01100,DATA_WIDTH=32'b0100000)'
+[ERROR (VERI-1216)] sva_protocol_compliance_checker.sv(254): index 31 is out of range [11:0] for 's_awaddr'
+[INFO (VERI-1073)] sva_protocol_compliance_checker.sv(7): module 'sva_protocol_compliance_checker' remains a black box, due to errors in its contents
+ERROR (ENL058): Unable to elaborate module/entity "sva_protocol_compliance_checker" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m sva_protocol_compliance_checker" if you want to black box this module/entity.
+WARNING (WNL059): If you are analyzing with "-mfcu" or "-sfcu" and "-L", try using "elaborate -L libname", "set_analyze_libunboundsearch" or "analyze +libunboundsearch"
 Summary of errors detected:
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(38): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(44): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(50): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(56): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(62): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(68): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(74): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(80): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(86): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(92): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(98): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(104): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(110): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(116): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(122): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(128): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(134): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(140): syntax error near ';'
-	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(146): syntax error near ';'
-ERROR (ENL034): 19 errors detected in the design file(s).
+	[ERROR (VERI-1216)] sva_protocol_compliance_checker.sv(254): index 31 is out of range [11:0] for 's_awaddr'
+	ERROR (ENL058): Unable to elaborate module/entity "sva_protocol_compliance_checker" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m sva_protocol_compliance_checker" if you want to black box this module/entity.
+ERROR (ENL034): 2 errors detected in the design file(s).
 
-ERROR: problem encountered at line 6 in file run_jasper.tcl
+ERROR: problem encountered at line 9 in file run_jasper.tcl
 
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
