@@ -48,60 +48,51 @@ INFO (IPF121): Cleared environment completely for new design analysis.
 [-- (VERI-1482)] Analyzing Verilog file 'axi_lite_slave.sv'
 % analyze -sv sva_protocol_compliance_checker.sv
 [-- (VERI-1482)] Analyzing Verilog file 'sva_protocol_compliance_checker.sv'
-% analyze -sv bind_axi_lite_slave.sv
-[-- (VERI-1482)] Analyzing Verilog file 'bind_axi_lite_slave.sv'
-% 
-% elaborate -top axi_lite_slave
-INFO (ISW003): Top module name is "axi_lite_slave".
-[INFO (HIER-8002)] axi_lite_slave.sv(162): Disabling old hierarchical reference handler
-[INFO (VERI-1018)] axi_lite_slave.sv(5): compiling module 'axi_lite_slave'
-[INFO (VERI-1018)] sva_protocol_compliance_checker.sv(7): compiling module 'sva_protocol_compliance_checker:(ADDR_WIDTH=32'b01100,DATA_WIDTH=32'b0100000)'
-axi_lite_slave
-[<embedded>] % 
-[<embedded>] % # Clock and reset (auto-detected from IR)
-[<embedded>] % clock clk
-[<embedded>] % reset ~rst_n
-INFO (IPM031): Clearing proof results of all properties.
-INFO (IRS006): Current reset condition is "rst_n".
-[<embedded>] % 
-[<embedded>] % # Engine configuration
-[<embedded>] % set_engine_mode {Ht Hp}
-[<embedded>] % 
-[<embedded>] % set_max_trace_length 20
-[<embedded>] % set_prove_time_limit 300s
-[<embedded>] % 
-[<embedded>] % # Run proofs
-[<embedded>] % prove -all
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(43): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(49): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(55): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(61): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(67): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(73): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(79): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(85): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(91): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(97): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(109): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(115): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(121): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(127): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(133): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(139): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(145): syntax error near ';'
+[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(151): syntax error near ';'
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(43): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(49): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(55): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(61): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(67): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(73): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(79): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(85): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(91): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(97): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(103): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(109): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(115): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(121): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(127): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(133): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(139): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(145): syntax error near ';'
+	[ERROR (VERI-1137)] sva_protocol_compliance_checker.sv(151): syntax error near ';'
+ERROR (ENL034): 19 errors detected in the design file(s).
 
-==============================================================
-SUMMARY
-==============================================================
-           Properties Considered              : 0
-                 assertions                   : 0
-                  - proven                    : 0
-                  - bounded_proven (user)     : 0
-                  - bounded_proven (auto)     : 0
-                  - marked_proven             : 0
-                  - cex                       : 0
-                  - ar_cex                    : 0
-                  - undetermined              : 0
-                  - unknown                   : 0
-                  - error                     : 0
-                 covers                       : 0
-                  - unreachable               : 0
-                  - bounded_unreachable (user): 0
-                  - covered                   : 0
-                  - ar_covered                : 0
-                  - undetermined              : 0
-                  - unknown                   : 0
-                  - error                     : 0
-no_properties
-[<embedded>] % 
-[<embedded>] % # Report results
-[<embedded>] % report -results -file jasper_results.log
-[<embedded>] % 
-[<embedded>] % exit
+ERROR: problem encountered at line 6 in file run_jasper.tcl
+
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
 INFO: Proof threads stopped.
-STATUS: PASS
+STATUS: FAIL
