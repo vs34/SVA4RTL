@@ -62,6 +62,10 @@ echo "TCL scripts  : ${TCL_FILES[*]}"
 echo "Syncing with upstream..."
 git -C "$REPO" pull --rebase origin "$BRANCH"
 
+# ── 8. Clean input dir locally (no commit/push) ───────────────────────────────
+
+rm -f "$INPUT_DIR"/*
+echo "Cleaned local input/ directory."
 # ── 4. Copy input files ───────────────────────────────────────────────────────
 
 mkdir -p "$INPUT_DIR"
@@ -192,9 +196,5 @@ echo "════════════════════════�
 echo "  Summary: $PASS/$TOTAL runs passed"
 echo "══════════════════════════════════════"
 
-# ── 8. Clean input dir locally (no commit/push) ───────────────────────────────
-
-rm -f "$INPUT_DIR"/*
-echo "Cleaned local input/ directory."
 
 [ $FAIL -eq 0 ]
